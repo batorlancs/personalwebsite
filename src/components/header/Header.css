@@ -1,0 +1,46 @@
+.header {
+    background-color: var(--color-background);
+    height: 80px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.header * {
+    color: var(--color-foreground);
+}
+
+.header-logo {
+    padding-block: 20px;
+    font-size: var(--text-size-l);
+    letter-spacing: 3px;
+    width: 30%;
+    margin-left: 10%;
+}
+
+.header-navbar {
+    display: flex;
+    width: 70%;
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 10%;
+}
+
+.header-navbar > button {
+    border: 0;
+    margin: 0;
+    background-color: transparent;
+    font-size: 18px;
+    letter-spacing: 3px;
+    margin-left: 5%;
+    cursor: pointer;
+
+}

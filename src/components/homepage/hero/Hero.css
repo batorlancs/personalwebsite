@@ -1,0 +1,37 @@
+.hero {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+}
+
+.hero-title {
+    padding: 50px;
+    padding-top: 100px;
+}
+
+.hero-title > h4 {
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size: 25px;
+    color: white;
+    margin: 0;
+}
+
+.hero-title > h1 {
+    color: rgb(255, 255, 105);
+    margin: 0;
+    margin-top: -10px;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    font-size: 60px;
+}
+
+.hero-title > h2 {
+    color: rgb(173, 173, 173);
+    font-weight: 300;
+    font-size: 25px;
+    font-style: italic;
+    letter-spacing: 2px;
+    margin: 0;
+}
