@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import ArrowRight from '../../../../../pic/arrow-right.svg';
 
 type TerminalOptionsProps = {
@@ -24,7 +24,7 @@ const TerminalOptions: React.FC<TerminalOptionsProps> = (props) => {
             </div>
             <div className='terminal-line'>
                 <img src={ArrowRight}></img>
-                <p>what would you like to know about me? <span className='gray'>- [ select option ]</span></p>
+                <p>what would you like to know about me?</p>
             </div>
             <div className={`terminal-line terminal-answer`}>
                 <p>//------------------------------------------------------------//</p>

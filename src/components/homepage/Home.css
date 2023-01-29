@@ -1,11 +1,6 @@
 .home {
-    padding-inline: 10%;
-    margin-top: 80px;
-    padding-top: 100px;
-    background-color: var(--color-background);
-    height: 1500px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+    background: url('../../pic/blobmain.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }

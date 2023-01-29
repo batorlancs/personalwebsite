@@ -27,6 +27,7 @@ body {
     --color-background: rgb(43, 43, 43);
     --color-foreground: rgb(255, 254, 254);
     --color-green: rgb(134, 255, 134);
+    --color-yellow: rgb(255, 255, 105);
     --color-gray: rgb(95, 95, 95);
     --text-size-xxs: 12px;
     --text-size-xs: 14px;

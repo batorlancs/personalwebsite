@@ -1,5 +1,4 @@
 .header {
-    background-color: var(--color-background);
     height: 80px;
     width: 100%;
     display: flex;
@@ -12,16 +11,14 @@
     z-index: 100;
 }
 
-.header * {
-    color: var(--color-foreground);
-}
-
 .header-logo {
     padding-block: 20px;
-    font-size: var(--text-size-l);
-    letter-spacing: 3px;
+    font-size: var(--text-size-xl);
+    font-weight: 900;
+    letter-spacing: 2px;
     width: 30%;
     margin-left: 10%;
+    color: white;
 }
 
 .header-navbar {
@@ -34,13 +31,13 @@
     margin-right: 10%;
 }
 
-.header-navbar > button {
+.header-navbar-button {
     border: 0;
     margin: 0;
+    color: white;
     background-color: transparent;
     font-size: 18px;
     letter-spacing: 3px;
     margin-left: 5%;
     cursor: pointer;
-
 }

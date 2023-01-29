@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Hero.css';
 import Terminal from './terminal/Terminal';
 

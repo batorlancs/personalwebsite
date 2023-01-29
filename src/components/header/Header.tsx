@@ -8,10 +8,10 @@ function Header() {
               terminal
           </div>
           <div className='header-navbar'>
-              <button>projects</button>
-              <button>skills</button>
-              <button>blog</button>
-              <button>contact</button>
+              <button className='header-navbar-button'>projects</button>
+              <button className='header-navbar-button'>skills</button>
+              <button className='header-navbar-button'>blog</button>
+              <button className='header-navbar-button'>contact</button>
           </div>
       </div>
     )

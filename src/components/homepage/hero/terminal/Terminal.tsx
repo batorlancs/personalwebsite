@@ -18,8 +18,11 @@ function Terminal() {
 
     function setFocusOnTerminalCommand() {
         let terminalCommand = document.getElementById('terminal-command');
-        if (terminalCommand)
+        if (terminalCommand) {
             terminalCommand.focus();
+            terminalCommand.setAttribute('value', 'terminal --help');
+            setCommand('terminal --help');
+        }
     }
 
     function handleKeyboardEvent(key: string) {
@@ -43,7 +46,11 @@ function Terminal() {
 
     return (
         <div className='terminal' onClick={() => {setFocusOnTerminalCommand()}}>
-            <div className='terminal-navbar'></div>
+            <div className='terminal-header'>
+                <div className='terminal-header-circle redback'></div>
+                <div className='terminal-header-circle greenback'></div>
+                <div className='terminal-header-circle yellowback'></div>
+            </div>
             <div className='terminal-content'>
                 <TerminalOptions highlighted={highlighted}/>
                 <div className='terminal-line'>
