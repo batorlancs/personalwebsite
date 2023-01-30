@@ -29,6 +29,31 @@
     align-items: center;
     justify-content: flex-end;
     margin-right: 10%;
+    overflow: hidden;
+    transition-duration: 0.5s;
+}
+
+.anim {
+    opacity: 0;
+    width: 0;
+}
+
+.header-navbar2 {
+    position: fixed;
+    top: 0;
+    right: 0;
+    filter: invert(1);
+    margin-right: 10%;
+    transition-delay: 0s;
+    transition-duration: 0.5s;
+    padding-top: 18px;
+    opacity: 0;
+}
+
+.anim2 {
+    transition-delay: 0.3s;
+    opacity: 1;
+    rotate: calc(0deg);
 }
 
 .header-navbar-button {

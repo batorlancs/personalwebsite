@@ -1,10 +1,15 @@
 import React from 'react';
 import './ProjectCard.css';
 import CardPic from '../../../pic/webimage.png';
+import 'aos/dist/aos.css';
 
-function ProjectCard() {
+type ProjectCardProps = {
+    delay: number;
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = (props)  => {
     return (
-        <div className='projectcard'>
+        <div className='projectcard' data-aos='zoom-in' data-aos-delay={props.delay}>
             <div className='projectcard-imgbox'>
                 <img className='projectcard-img' src={CardPic}></img>
             </div>

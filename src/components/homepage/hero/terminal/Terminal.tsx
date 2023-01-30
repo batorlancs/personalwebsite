@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import './Terminal.css';
 import ArrowRight from '../../../../pic/arrow-right.svg';
 import TerminalOptions from './terminalOptions/TerminalOptions';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function Terminal() {
 
@@ -14,13 +16,14 @@ function Terminal() {
             handleKeyboardEvent(event.key);
         })
         setFocusOnTerminalCommand();
+        AOS.init({duration: 2000});
+
     }, [])
 
     function setFocusOnTerminalCommand() {
         let terminalCommand = document.getElementById('terminal-command');
         if (terminalCommand) {
             terminalCommand.focus();
-            terminalCommand.setAttribute('value', 'terminal --help');
             setCommand('terminal --help');
         }
     }
@@ -55,7 +58,11 @@ function Terminal() {
                 <TerminalOptions highlighted={highlighted}/>
                 <div className='terminal-line'>
                     <img src={ArrowRight}></img>
-                    <input type='text' id='terminal-command' onChange={((event) => {setCommand(event.target.value)})}></input>
+                    <input type='text'
+                        id='terminal-command'
+                        placeholder='terminal --help'
+                        onChange={((event) => {setCommand(event.target.value)})}>
+                    </input>
                 </div>
             </div>
         </div>

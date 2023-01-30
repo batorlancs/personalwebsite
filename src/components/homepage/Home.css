@@ -4,3 +4,12 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+.hidden {
+    opacity: 0;
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+}

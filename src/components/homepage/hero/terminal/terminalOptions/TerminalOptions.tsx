@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import ArrowRight from '../../../../../pic/arrow-right.svg';
+import '../Terminal.css';
 
 type TerminalOptionsProps = {
     highlighted: number;
@@ -24,10 +25,10 @@ const TerminalOptions: React.FC<TerminalOptionsProps> = (props) => {
             </div>
             <div className='terminal-line'>
                 <img src={ArrowRight}></img>
-                <p>what would you like to know about me?</p>
+                <p>what would you like to do?</p>
             </div>
             <div className={`terminal-line terminal-answer`}>
-                <p>//------------------------------------------------------------//</p>
+                <p>//------------------------------------------------//</p>
             </div>
             <div className={`terminal-line terminal-option${isHighlighted(0)}`}>
                 <img src={ArrowRight}></img>
@@ -39,10 +40,10 @@ const TerminalOptions: React.FC<TerminalOptionsProps> = (props) => {
             </div>
             <div className={`terminal-line terminal-option${isHighlighted(2)}`}>
                 <img src={ArrowRight}></img>
-                <p>take a look at the blog about my progress</p>
+                <p>contact me</p>
             </div>
             <div className={`terminal-line terminal-answer`}>
-                <p>//------------------------------------------------------------//</p>
+                <p>//------------------------------------------------//</p>
             </div>
         </div>
     );

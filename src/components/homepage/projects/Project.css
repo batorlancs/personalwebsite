@@ -23,8 +23,7 @@
     font-size: 25px;
     cursor: pointer;
     background-color: transparent;
-    opacity: 60%;
-    color: white;
+    color: rgb(242, 255, 172);
 }
 
 .project-projectcards {

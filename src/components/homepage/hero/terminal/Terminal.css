@@ -1,23 +1,25 @@
 .terminal {
     z-index: 10;
     border-radius: 30px;
-    animation-duration: 0.5s;
+    background: rgba(0, 0, 0, 0.6);
     transition-duration: 0.5s;
-    background: rgba(19, 19, 19, 0.6);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     -webkit-box-shadow: -1px 5px 19px 3px rgba(0,0,0,0.44);
     -moz-box-shadow: -1px 5px 19px 3px rgba(0,0,0,0.44);
     box-shadow: -1px 5px 19px 3px rgba(0,0,0,0.44);
-    border: 0.2px solid rgb(27, 27, 27);
+    cursor: text;
+    max-width: 600px;
 }
 
 .terminal:hover {
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
 }
 
 .terminal * {
-    font-family: 'Chakra Petch', sans-serif;
+    /* font-family: 'Chakra Petch', sans-serif; */
+    font-family: 'PT Mono', monospace;
 }
 
 .terminal-header {
@@ -25,12 +27,13 @@
     height: 40px;
     border-top-right-radius: 30px;
     border-top-left-radius: 30px;
-    background: rgba(19, 19, 19, 0.2);
+    background: rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
     padding-left: 30px;
+    transition-duration: 0.5s;
 }
 
 .terminal-header-circle {
@@ -67,12 +70,12 @@
 }
 
 .terminal-option {
-    opacity: 30%;
+    opacity: 50%;
     cursor: pointer;
 }
 
 .terminal-answer {
-    opacity: 30%;
+    opacity: 50%;
 }
 
 .terminal-option:hover {
@@ -89,9 +92,9 @@
 
 .terminal-line > p {
     margin: 0;
-    padding-top: 3px;
+    padding-top: 6px;
     color: white;
-    font-size: var(--text-size-s)
+    font-size: 15px;
 }
 
 .terminal-option-highlighted {
@@ -107,11 +110,11 @@
 }
 
 .terminal-line > input {
-    padding-top: 3px;
+    padding-top: 6px;
     background-color: transparent;
     border: 0;
     color: white;
-    font-size: var(--text-size-s);
+    font-size: 15px;
     width: 100%;
 }
 

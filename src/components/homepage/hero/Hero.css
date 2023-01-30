@@ -42,3 +42,19 @@
     letter-spacing: 2px;
     margin: 0;
 }
+
+.hero-title > button {
+    margin: 0;
+    margin-top: 25px;
+    border: 0;
+    padding: 0;
+    padding-inline: 40px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background-color: var(--color-yellow);
+    color: black;
+    cursor: pointer;
+}
