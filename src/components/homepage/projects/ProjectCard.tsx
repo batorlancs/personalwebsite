@@ -11,7 +11,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props)  => {
     return (
         <div className='projectcard' data-aos='zoom-in' data-aos-delay={props.delay}>
             <div className='projectcard-imgbox'>
-                <img className='projectcard-img' src={CardPic}></img>
+                <img src={CardPic}></img>
             </div>
             <div className='projectcard-content'>
                 <h4 className='projectcard-type'>Javascript, React</h4>

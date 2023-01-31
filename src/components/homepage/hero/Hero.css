@@ -3,7 +3,6 @@
     padding-inline: 10%;
     padding-top: 180px;
     padding-bottom: 300px;
-    /* background-color: #111111; */
     width: 100%;
     display: flex;
     justify-content: left;
@@ -26,6 +25,7 @@
 }
 
 .hero-title > h1 {
+    font-weight: 600;
     color: rgb(255, 255, 105);
     margin: 0;
     margin-top: -10px;

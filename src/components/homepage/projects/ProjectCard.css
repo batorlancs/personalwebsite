@@ -16,7 +16,6 @@
 }
 
 .projectcard-imgbox {
-    background-color: rgb(114, 114, 114);
     height: 100%;
     width: 30%;
     margin-right: 25px;
@@ -26,11 +25,6 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    position: relative;
-}
-
-.projectcard-img {
-    position: absolute;
 }
 
 .projectcard-content {
