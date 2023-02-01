@@ -10,10 +10,10 @@ function Hero() {
 
     return (
         <div className='relative bg-[url("../pic/waves2.png")] bg-no-repeat bg-cover px-[10%] pt-48 pb-44 w-full '>
-            <div className='absolute top-0 left-0 w-full h-full bg-black opacity-10'></div>
+            <div className='absolute z-0 top-0 left-0 w-full h-full bg-black opacity-10'></div>
             <div className='flex justify-left items-start rounded-3xl'>
                 <Terminal />
-                <div className='p-20 pt-12 z-10'>
+                <div className='p-20 pt-12 z-20'>
                     <h4 className='flex items-center text-2xl  text-black m-0'
                         data-aos='fade-left' data-aos-duration='2000' data-aos-delay='0'>
                         <hr className='w-24 h-[1px] bg-black border-none'/>
@@ -46,7 +46,7 @@ function Hero() {
                     </div>
                 </div>
             </div>
-            <Articles />
+            < Articles />
         </div>
         
     )

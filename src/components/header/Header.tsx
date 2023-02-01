@@ -13,8 +13,8 @@ function Header() {
             setAnim('');
             setAnim2('');
         } else {
-            setAnim('ml-0 opacity-0');
-            setAnim2('mr-0 opacity-0');
+            setAnim('ml-[0%] opacity-0');
+            setAnim2('mr-[0%] opacity-0');
         }
     });
 
@@ -31,13 +31,13 @@ function Header() {
                 <button className={buttonStyle}>experience</button>
                 {/* <button className={buttonStyle}>contact</button> */}
                 <div className='flex flex-row gap-5'>
-                    <button className='h-14 w-14 bg-emerald-400 rounded-full overflow-hidden hover:bg-emerald-200'>
+                    <button className='h-14 w-14 rounded-full overflow-hidden duration-500 bg-white hover:bg-blue-400'>
                         <img src={Linkedin}></img>
                     </button>
-                    <button className='h-14 w-14 bg-emerald-400 rounded-full overflow-hidden hover:bg-emerald-200'>
+                    <button className='h-14 w-14 rounded-full overflow-hidden duration-500 bg-white hover:bg-blue-400'>
                         <img src={Github}></img>
                     </button>
-                    <button className='h-14 w-14 bg-emerald-400 rounded-full overflow-hidden hover:bg-emerald-200'>
+                    <button className='h-14 w-14 rounded-full overflow-hidden duration-500 bg-white hover:bg-blue-400'>
                         <img src={Facebook}></img>
                     </button>
                 </div>
