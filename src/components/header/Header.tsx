@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
-import MenuIcon from '../../pic/menu.svg';
+import Linkedin from '../../pic/sociallogos/linkedin.png';
+import Github from '../../pic/sociallogos/github.png';
+import Facebook from '../../pic/sociallogos/facebook.png';
 
 function Header() {
 
@@ -11,8 +13,8 @@ function Header() {
             setAnim('');
             setAnim2('');
         } else {
-            setAnim('-ml-[10%] opacity-0');
-            setAnim2('-mr-[10%] opacity-0');
+            setAnim('ml-0 opacity-0');
+            setAnim2('mr-0 opacity-0');
         }
     });
 
@@ -20,18 +22,24 @@ function Header() {
 
     return (
       <div className='absolute h-40 w-full flex flex-row items-center justify-between top-0 left-0 z-50 font-body'>
-            <div className={`py-20 text-4xl ml-[10%] font-bold text-black duration-1000 ${anim}`}>
+            <div className={`py-20 text-4xl ml-[10%] font-bold text-black duration-500 ${anim}`}>
                 Terminal.
             </div>
-            <div className={`flex flex-row items-center justify-end gap-16 w-[25%] mr-[10%] h-full duration-1000 ${anim2}`}>
+            <div className={`flex flex-row items-center justify-end gap-16 w-[25%] mr-[10%] h-full duration-500 ${anim2}`}>
                 <button className={buttonStyle}>projects</button>
                 <button className={buttonStyle}>skills</button>
                 <button className={buttonStyle}>experience</button>
                 {/* <button className={buttonStyle}>contact</button> */}
                 <div className='flex flex-row gap-5'>
-                    <button className='h-14 w-14 bg-black text-white rounded-full'>in</button>
-                    <button className='h-14 w-14 bg-black text-white rounded-full'>git</button>
-                    <button className='h-14 w-14 bg-black text-white rounded-full'>f</button>
+                    <button className='h-14 w-14 bg-emerald-400 rounded-full overflow-hidden hover:bg-emerald-200'>
+                        <img src={Linkedin}></img>
+                    </button>
+                    <button className='h-14 w-14 bg-emerald-400 rounded-full overflow-hidden hover:bg-emerald-200'>
+                        <img src={Github}></img>
+                    </button>
+                    <button className='h-14 w-14 bg-emerald-400 rounded-full overflow-hidden hover:bg-emerald-200'>
+                        <img src={Facebook}></img>
+                    </button>
                 </div>
             </div>
       </div>
