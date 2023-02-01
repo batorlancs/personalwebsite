@@ -1,60 +1,7 @@
-.hero {
-    position: relative;
-    padding-inline: 10%;
-    padding-top: 180px;
-    padding-bottom: 300px;
-    width: 100%;
-    display: flex;
-    justify-content: left;
-    align-items: flex-start;
-    overflow: hidden;
-}
-
-.hero-title {
-    padding: 50px;
-    padding-top: 100px;
-    z-index: 10;
-}
-
-.hero-title > h4 {
-    font-weight: 400;
-    letter-spacing: 1px;
-    font-size: 25px;
-    color: white;
-    margin: 0;
-}
-
-.hero-title > h1 {
-    font-weight: 600;
-    color: rgb(255, 255, 105);
-    margin: 0;
-    margin-top: -10px;
-    margin-bottom: 40px;
-    letter-spacing: 1px;
-    font-size: 60px;
-}
-
-.hero-title > h2 {
-    color: rgb(173, 173, 173);
-    font-weight: 300;
-    font-size: 25px;
-    font-style: italic;
-    letter-spacing: 2px;
-    margin: 0;
-}
-
-.hero-title > button {
-    margin: 0;
-    margin-top: 25px;
-    border: 0;
-    padding: 0;
-    padding-inline: 40px;
-    height: 40px;
-    border-radius: 10px;
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    background-color: var(--color-yellow);
-    color: black;
-    cursor: pointer;
+.btn2 span:first-child{
+    transform: translateX(-101%);
+    transition: transform .3s ease-in;
+  }
+.btn2:hover span{
+    transform: translateX(0);
 }

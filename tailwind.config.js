@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/components/projectspage/*.{js,jsx,ts,tsx}"
+    "./src/**/*.{js,jsx,ts,tsx}"
   ],
   presets: [],
   darkMode: 'media', // or 'class'
@@ -390,6 +390,8 @@ module.exports = {
         '"Courier New"',
         'monospace',
       ],
+      body: ['Jost'],
+      terminal: ['PT Mono']
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],

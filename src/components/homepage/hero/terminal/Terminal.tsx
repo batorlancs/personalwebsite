@@ -1,15 +1,16 @@
-import React, {useState, useEffect} from 'react';
-import './Terminal.css';
+import React, {useState, useEffect, useRef} from 'react';
 import ArrowRight from '../../../../pic/arrow-right.svg';
 import TerminalOptions from './terminalOptions/TerminalOptions';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import './Terminal.css';
 
 function Terminal() {
 
     const [command, setCommand] = useState("");
     const [highlighted, setHighlighted] = useState(0);
     const numberOfOptions = 3;
+    const inputRef = useRef<HTMLInputElement>(null);
     
     useEffect(() => {
         document.addEventListener("keydown", (event) => {
@@ -18,14 +19,10 @@ function Terminal() {
         setFocusOnTerminalCommand();
         AOS.init({duration: 2000});
 
-    }, [])
+    }, []);
 
     function setFocusOnTerminalCommand() {
-        let terminalCommand = document.getElementById('terminal-command');
-        if (terminalCommand) {
-            terminalCommand.focus();
-            setCommand('terminal --help');
-        }
+        inputRef.current?.focus();
     }
 
     function handleKeyboardEvent(key: string) {
@@ -48,19 +45,23 @@ function Terminal() {
     }
 
     return (
-        <div className='terminal' onClick={() => {setFocusOnTerminalCommand()}}>
-            <div className='terminal-header'>
-                <div className='terminal-header-circle redback'></div>
-                <div className='terminal-header-circle greenback'></div>
-                <div className='terminal-header-circle yellowback'></div>
+        <div className='terminal z-10 rounded-3xl bg-black bg-opacity-80 duration-500 backdrop-blur-xl cursor-text max-w-[600px] min-w-[500px] font-terminal'
+            onClick={() => {setFocusOnTerminalCommand()}}>
+            <div className='w-full h-10 rounded-t-3xl bg-black bg-opacity-1 flex flex-row gap-x-2 items-center
+            justify-start pl-8 duration-500'>
+                <div className='h-3 w-3 bg-green-500 rounded-full'></div>
+                <div className='h-3 w-3 bg-red-500 rounded-full'></div>
+                <div className='h-3 w-3 bg-yellow-300 rounded-full'></div>
             </div>
-            <div className='terminal-content'>
+            <div className='p-5 pr-24 h-[500px] overflow-y-hidden'>
                 <TerminalOptions highlighted={highlighted}/>
-                <div className='terminal-line'>
-                    <img src={ArrowRight}></img>
-                    <input type='text'
+                <div className='flex flex-row justify-start items-start'>
+                    <img src={ArrowRight} className='invert h-8'></img>
+                    <input className='pt-[4px] bg-transparent border-none text-yellow-200 text-s w-full placeholder:text-yellow-200 placeholder:opacity-50 focus:outline-none'
+                        type='text'
                         id='terminal-command'
                         placeholder='terminal --help'
+                        ref={inputRef}
                         onChange={((event) => {setCommand(event.target.value)})}>
                     </input>
                 </div>
