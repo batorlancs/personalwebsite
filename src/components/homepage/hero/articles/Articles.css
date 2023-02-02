@@ -3,9 +3,5 @@
 }
 
 .articlebutton:hover > img {
-    width: 32px;
-}
-
-.articlebutton:hover > p {
-    color: rgb(33, 109, 33);
+    width: 64px;
 }
