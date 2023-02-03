@@ -1,24 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ArrowRight from '../../../../pic/arrow-right.svg';
 import './Articles.css';
 import 'aos/dist/aos.css';
+import {collection, getDocs} from 'firebase/firestore';
+import { db } from '../../../../firebase';
+
+type ArticleData = {
+    id: string,
+    title: string,
+    desc: string,
+    time: string,
+    badgeColor: string
+}
 
 function Articles() {
 
-    const cards = [{
-        title: "Article Title of Something",
-        desc: "This is a description about the article, a little intro about what it looks like",
-        time: "2 hours ago",
-        badgeColor: "bg-blue-500",
-        order: 0
-    }, {
-        title: "Article Title of Another Thing",
-        desc: "This is a description about the article, a little intro about what it looks like",
-        time: "4 days ago",
-        badgeColor: "bg-orange-500",
-        order: 1
-    },
-    ]
+    const [articles, setArticles] = useState<ArticleData[]>([]);
+
+    const getArticles = async () => {
+        const data = await getDocs(collection(db, 'articles'));
+        const formattedData = data.docs.map((doc) => ({...doc.data() as ArticleData, id: doc.id}));
+        setArticles(formattedData);
+    }
+
+    console.log(articles);
+
+    useEffect(() => {
+        getArticles();
+    }, [])
 
     return (
         <div className='pt-56'>
@@ -33,11 +42,11 @@ function Articles() {
                     </button>
                 </div>
 
-                {cards.map((card) => (
-                    <div className='w-full h-full p-6 bg-white bg-opacity-30 border-white border-2 rounded-3xl shadow-2xl z-20'
-                    data-aos='fade-left' data-aos-duration='1000' data-aos-delay={card.order * 200}>
+                {articles.map((card) => (
+                    <div className='w-full h-full p-6 rounded-3xl backdrop-blur-xl bg-white bg-opacity-20  shadow-xl z-20'
+                    data-aos='fade-left' data-aos-duration='1000'>
                         <div className='flex flex-row items-center justify-between w-full'>
-                            <img className={`h-5 w-20 bg-opacity-50 rounded-full ${card.badgeColor}`}></img>
+                            <img className={`h-3 w-9 bg-opacity-50 rounded-full ${card.badgeColor}`}></img>
                             <p className='text-lg font-semibold opacity-50'>{card.time}</p>
                         </div>
                         <h3 className='mt-5 text-2xl font-bold'>{card.title}</h3>

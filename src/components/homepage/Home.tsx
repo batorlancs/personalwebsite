@@ -10,7 +10,8 @@ function Home() {
     }, [])
 
     return (
-        <div className='bg-fixed bg-no-repeat bg-cover font-body'>
+        <div className='font-body relative bg-[url("../pic/waves6.png")] bg-no-repeat bg-cover'>
+            <div className='absolute z-0 w-full h-full bg-gray-200 bg-opacity-40'></div>
             <Hero />
             <Project />
         </div>
