@@ -28,21 +28,16 @@ function Project() {
     }, [])
 
     return (
-        <div id='projects-page' className='px-[10%] pt-44 pb-96 w-full bg-black bg-opacity-10'>
-            <div className='flex flex-row justify-between items-center'>
-                <h1 className=' z-50 text-6xl font-bold'
-                data-aos='fade-right'>
-                MY LATEST PROJECTS
+        <div id='projects-page' className='px-[10%] mt-24 pb-24 w-full'>
+            <div className='flex flex-row justify-between items-center bg-white bg-opacity-20 py-6 px-12 rounded-3xl backdrop-blur-xl shadow-lg overflow-hidden' data-aos='fade-up'>
+                <h1 className='z-50 text-4xl font-bold'>
+                My Latest Projects
                 </h1>
-                <button className='z-50 text-2xl text-stone-500'
-                data-aos='fade-left'>
-                See All Projects
+                <button className='z-50 text-2xl text-stone-500'>
+                See All
                 </button>
             </div>
-            {projects.length > 0 &&
-            <div className='project-projectcards'>
-                {projects.map((project) => <ProjectCard data={project}/>)}
-            </div>}
+            {projects.length > 0 && projects.map((project) => <ProjectCard data={project}/>)}
         </div>
     )
 }

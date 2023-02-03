@@ -1,7 +1,7 @@
 .articlebutton > img {
-    width: 0;
+    width: 32;
 }
 
 .articlebutton:hover > img {
-    width: 64px;
+    width: 42px;
 }

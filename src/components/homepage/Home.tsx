@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Hero from './hero/Hero';
 import Project from './projects/Project';
+import Contact from './contact/Contact';
 import AOS from 'aos';
 
 function Home() {
@@ -14,6 +15,7 @@ function Home() {
             <div className='absolute z-0 w-full h-full bg-gray-200 bg-opacity-40'></div>
             <Hero />
             <Project />
+            <Contact />
         </div>
     )
 }
