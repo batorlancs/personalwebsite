@@ -391,7 +391,8 @@ module.exports = {
         'monospace',
       ],
       body: ['Jost'],
-      terminal: ['PT Mono']
+      terminal: ['PT Mono'],
+      cursive: ['Cedarville Cursive']
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],
