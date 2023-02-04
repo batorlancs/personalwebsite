@@ -4,13 +4,13 @@ import './Articles.css';
 import 'aos/dist/aos.css';
 import {collection, getDocs} from 'firebase/firestore';
 import { db } from '../../../../firebase';
+import { calcTimeDifference } from '../../../../functions';
 
 type ArticleData = {
     id: string,
     title: string,
     desc: string,
-    time: string,
-    badgeColor: string
+    time: number
 }
 
 function Articles() {
@@ -20,10 +20,10 @@ function Articles() {
     const getArticles = async () => {
         const data = await getDocs(collection(db, 'articles'));
         const formattedData = data.docs.map((doc) => ({...doc.data() as ArticleData, id: doc.id}));
+        //set data in order (based on time)
+        formattedData.sort((a, b) => (a.time < b.time) ? 1 : ((b.time < a.time) ? -1 : 0));
         setArticles(formattedData);
     }
-
-    console.log(articles);
 
     useEffect(() => {
         getArticles();
@@ -31,9 +31,9 @@ function Articles() {
 
     return (
         <div className='pt-56'>
-            <div className='flex flex-row justify-between items-center gap-20 min-h-72'>
+            <div className='relative flex flex-row justify-between items-center gap-20 h-72 min-h-72'>
 
-                <div className='min-w-[500px] h-full flex flex-col justify-center items-start z-20'>
+                <div className='min-w-[500px] h-full flex flex-col justify-center items-start'>
                     <h2 className='text-4xl font-bold tracking-tight'>My Coding Journey</h2>
                     <p className='text-2xl mt-5'>Take a look at my recent articles about my progress and plans for the future.</p>
                     <button className='articlebutton mt-10 h-14 text-2xl tracking-wider flex flex-row justify-start items-center text-emerald-600 duration-500'>
@@ -42,12 +42,12 @@ function Articles() {
                     </button>
                 </div>
 
-                {articles.map((article) => (
-                    <div className='w-full h-full p-6 rounded-3xl backdrop-blur-xl bg-white bg-opacity-20 shadow-lg z-20'
+                {articles.slice(0, 2).map((article) => (
+                    <div className='w-[50%] h-full p-6 rounded-3xl backdrop-blur-xl bg-white bg-opacity-20 shadow-lg'
                     data-aos='fade-left' data-aos-duration='1000'>
                         <div className='flex flex-row items-center justify-between w-full'>
                             <img className={`h-3 w-9 bg-emerald-600 bg-opacity-50 rounded-full`}></img>
-                            <p className='text-lg font-semibold opacity-50'>{article.time}</p>
+                            <p className='text-lg font-semibold opacity-50'>{calcTimeDifference(article.time)}</p>
                         </div>
                         <h3 className='mt-5 text-2xl font-bold'>{article.title}</h3>
                         <p className='mt-2 pb-10 text-xl'>{article.desc}</p>

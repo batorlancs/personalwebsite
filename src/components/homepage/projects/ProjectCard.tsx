@@ -16,7 +16,7 @@ type ProjectCardProps = {
 const ProjectCard: React.FC<ProjectCardProps> = (props)  => {
     return (
         <div className='relative flex flex-row h-[600px] bg-white backdrop-blur-lg bg-opacity-0 mt-24' data-aos='fade-up' >
-            <div className='relative h-full w-[35%] min-w-[300px] bg-black rounded-3xl shadow-2xl overflow-hidden'>
+            <div className='relative h-full min-w-[500px] bg-black rounded-3xl shadow-2xl overflow-hidden'>
                 <img src={props.data.pic} className='absolute top-0 left-0 min-h-full object-cover'></img>
             </div>
             <div className='px-20 py-12 flex flex-col h-full items-start justify-center w-[65%]' data-aos='fade-left' data-aos-delay='200'>

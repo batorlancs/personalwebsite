@@ -10,7 +10,8 @@ type ProjectData = {
     desc: string,
     tech: string,
     pic: string,
-    github: string
+    github: string,
+    time: number
 }
 
 function Project() {
@@ -20,6 +21,8 @@ function Project() {
     const getProjects = async () => {
         const data = await getDocs(collection(db, 'projects'));
         const formattedData = data.docs.map((doc) => ({...doc.data() as ProjectData, id: doc.id}));
+        //set data in order (based on time)
+        formattedData.sort((a, b) => (a.time < b.time) ? 1 : ((b.time < a.time) ? -1 : 0));
         setProjects(formattedData);
     }
 
@@ -37,7 +40,7 @@ function Project() {
                 See All
                 </button>
             </div>
-            {projects.length > 0 && projects.map((project) => <ProjectCard data={project}/>)}
+            {projects.length > 0 && projects.slice(0, 2).map((project) => <ProjectCard data={project}/>)}
         </div>
     )
 }

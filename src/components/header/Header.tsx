@@ -1,7 +1,8 @@
 import React, {useReducer, useState} from 'react';
-import Linkedin from '../../pic/sociallogos/linkedin.png';
-import Github from '../../pic/sociallogos/github.png';
-import Facebook from '../../pic/sociallogos/facebook.png';
+import LinkedinIcon from '../../pic/sociallogos/linkedin.png';
+import GithubIcon from '../../pic/sociallogos/github.png';
+import FacebookIcon from '../../pic/sociallogos/facebook.png';
+import MenuIcon from '../../pic/menu.svg';
 
 const initState = { left: "ml-[10%]", right: "mr-[10%]"};
 
@@ -30,8 +31,8 @@ function Header() {
     const [state, dispatch] = useReducer(reducer, initState);
 
     // tailwind styles
-    const buttonStyle = 'text-black text-2xl tracking-wider';
-    const linkStyle = 'h-14 w-14 rounded-full overflow-hidden duration-500 bg-white bg-opacity-0 hover:bg-opacity-60';
+    const buttonStyle = 'text-black text-2xl tracking-wider max-2xl:text-xl';
+    const linkStyle = 'h-14 w-14 rounded-full overflow-hidden duration-500 bg-white bg-opacity-0 hover:bg-opacity-60 max-2xl:h-12 max-2xl:w-12';
 
     window.addEventListener(('scroll'), () => {
         if (window.scrollY === 0) {
@@ -48,25 +49,26 @@ function Header() {
 
     return (
       <div className='absolute h-40 w-full flex flex-row items-center justify-between top-0 left-0 z-50 font-body'>
-            <div className={`py-20 text-4xl font-bold text-black duration-500 ${state.left}`}>
+            <div className={`py-20 text-4xl font-bold text-black duration-500 ${state.left} max-sm:text-2xl`}>
                 Terminal.
             </div>
-            <div className={`flex flex-row items-center justify-end gap-16 w-[25%] h-full duration-500 ${state.right}`}>
+            <div className={`flex flex-row items-center justify-end gap-16 w-[25%] h-full duration-500 ${state.right} max-2xl:gap-10 max-lg:hidden`}>
                 <button className={buttonStyle} onClick={handleProjectClick}>projects</button>
                 <button className={buttonStyle}>skills</button>
                 <button className={buttonStyle}>experience</button>
                 <div className='flex flex-row gap-5'>
                     <a href="https://www.linkedin.com/in/gergely-bator/" target="_blank" className={linkStyle}>
-                        <img src={Linkedin}></img>
+                        <img src={LinkedinIcon}></img>
                     </a>
                     <a href="https://github.com/batorlancs" target="_blank" className={linkStyle}>
-                        <img src={Github}></img>
+                        <img src={GithubIcon}></img>
                     </a>
                     <a href="https://www.facebook.com/gergely.bator.7/" target="_blank" className={linkStyle}>
-                        <img src={Facebook}></img>
+                        <img src={FacebookIcon}></img>
                     </a>
                 </div>
             </div>
+            <img src={MenuIcon} className={`h-10 duration-500 ${state.right} hidden max-lg:inline`}></img>
       </div>
     )
   }

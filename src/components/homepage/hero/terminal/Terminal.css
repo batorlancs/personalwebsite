@@ -1,5 +1,21 @@
 .terminal {
-    -webkit-box-shadow: -65px 64px 0px 0px rgba(0,0,0,0.35);
-    -moz-box-shadow: -65px 64px 0px 0px rgba(0,0,0,0.35);
-    box-shadow: -65px 64px 0px 0px rgba(0,0,0,0.35);
+    -webkit-box-shadow: -64px 64px 0px 0px rgba(0,0,0,0.35);
+    -moz-box-shadow: -64px 64px 0px 0px rgba(0,0,0,0.35);
+    box-shadow: -64px 64px 0px 0px rgba(0,0,0,0.35);
+}
+
+@media only screen and (max-width: 1280px) {
+    .terminal {
+        -webkit-box-shadow: -32px 32px 0px 0px rgba(0,0,0,0.35);
+        -moz-box-shadow: -32px 32px 0px 0px rgba(0,0,0,0.35);
+        box-shadow: -32px 32px 0px 0px rgba(0,0,0,0.35);
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .terminal {
+        -webkit-box-shadow: -16px 16px 0px 0px rgba(0,0,0,0.35);
+        -moz-box-shadow: -16px 16px 0px 0px rgba(0,0,0,0.35);
+        box-shadow: -16px 16px 0px 0px rgba(0,0,0,0.35);
+    }
 }

@@ -25,7 +25,7 @@ const TerminalOptions: React.FC<TerminalOptionsProps> = (props) => {
     }];
 
     return (
-        <div>
+        <div className='max-xl:hidden'>
             {terminalWelcome.map((line) => (
                 <div className='flex flex-row justify-start items-start'>
                     <img src={ArrowRight} className='invert h-8'></img>
