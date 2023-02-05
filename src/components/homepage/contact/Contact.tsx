@@ -56,7 +56,7 @@ function Contact() {
     const [errorMsg, setErrorMsg] = useState("");
 
     return (
-        <div id='contact-page' className='relative pb-28 mt-4 max-w-[2000px] px-[10%] max-sm:px-[5%] max-sm:pb-16' data-aos='fade-up'>
+        <div id='contact-page' className='relative pb-28 mt-4 max-w-[2000px] px-[10%] max-sm:px-[5%] max-sm:pb-16'>
             <div className='flex flex-row items-center justify-between rounded-3xl'>
 
                 <div className='min-w-[500px] pr-10 mr-20 max-2xl:min-w-[400px] max-xl:min-w-0 max-xl:w-full max-lg:hidden'>
