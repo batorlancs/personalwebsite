@@ -35,7 +35,7 @@ function Header() {
     const linkStyle = 'h-14 w-14 rounded-full overflow-hidden duration-500 bg-white bg-opacity-0 hover:bg-opacity-60 max-2xl:h-12 max-2xl:w-12';
 
     window.addEventListener(('scroll'), () => {
-        if (window.scrollY === 0) {
+        if (window.scrollY <= 0) {
             dispatch({ type: HEADER_ANIMATION.IN});
         } else {
             dispatch({ type: HEADER_ANIMATION.OUT});
@@ -49,8 +49,8 @@ function Header() {
 
     return (
       <div className='absolute h-40 w-full flex flex-row items-center justify-between top-0 left-0 z-50 font-body'>
-            <div className={`py-20 text-4xl font-bold text-black duration-500 ${state.left} max-sm:text-2xl`}>
-                Terminal.
+            <div className={`py-20 text-5xl font-cursive text-black duration-500 ${state.left} max-xl:text-4xl max-sm:text-3xl`}>
+                Portfolio
             </div>
             <div className={`flex flex-row items-center justify-end gap-16 w-[25%] h-full duration-500 ${state.right} max-2xl:gap-10 max-lg:hidden`}>
                 <button className={buttonStyle} onClick={handleProjectClick}>projects</button>

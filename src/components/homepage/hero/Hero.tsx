@@ -58,7 +58,7 @@ function Hero() {
     }
 
     return (
-        <div className='px-[10%] pt-48 w-full max-xl:pt-40 max-sm:pt-24'>
+        <div className='px-[10%] pt-48 w-full max-xl:pt-40 max-sm:pt-32'>
             <div className='absolute z-0 top-0 left-0 w-full h-full bg-black opacity-10'></div>
             <div className='flex justify-left items-start rounded-3xl'>
                 <Terminal />
@@ -82,7 +82,7 @@ function Hero() {
 
                     <div className='flex flex-row items-start mt-16 max-sm:mt-10' data-aos='fade-left' data-aos-duration='2000' data-aos-delay='800'>
                         <button className='btn2 w-52 h-14 font-light relative border bg-black text-white border-none rounded-full text-xl tracking-wider leading-none overflow-hidden shadow-lg
-                        max-sm:h-12 max-sm:w-40 max-sm:text-lg'
+                        max-sm:h-12 max-sm:w-44 max-sm:text-lg'
                         onClick={handleContactClick} type="button">
                             <span className="absolute inset-0 bg-white bg-opacity-30"></span>
                             <span className="absolute inset-0 flex justify-center items-center opacity-0"> 
