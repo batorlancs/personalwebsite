@@ -7,7 +7,7 @@ import AOS from 'aos';
 function Home() {
 
     useEffect(() => {
-        AOS.init({duration: 1000});
+        AOS.init({duration: 1000, disable: 'mobile'});
     }, [])
 
     return (

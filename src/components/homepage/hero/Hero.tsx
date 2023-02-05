@@ -80,7 +80,7 @@ function Hero() {
                     I am a Hungarian Software Developer in my 2nd year of Computer Science at Lancaster University. Feel free to reach out to me anytime!
                     </h2>
 
-                    <div className='flex flex-row items-start mt-16 max-sm:mt-10' data-aos='fade-left' data-aos-duration='2000' data-aos-delay='800'>
+                    <div className='flex flex-row items-start mt-16 max-sm:mt-10 max-sm:flex-col' data-aos='fade-left' data-aos-duration='2000' data-aos-delay='800'>
                         <button className='btn2 w-52 h-14 font-light relative border bg-black text-white border-none rounded-full text-xl tracking-wider leading-none overflow-hidden shadow-lg
                         max-sm:h-12 max-sm:w-44 max-sm:text-lg'
                         onClick={handleContactClick} type="button">
@@ -90,8 +90,8 @@ function Hero() {
                             </span>
                             Contact me
                         </button>
-                        <button className='ml-6 h-14 w-14 bg-black text-white border-none rounded-full text-xl font-normal max-sm:hidden
-                            flex items-center justify-center shadow-lg duration-500 hover:bg-neutral-600' type="button" onClick={() => {copyTextToClipboard('batorgergely3@gmail.com')}}>
+                        <button className='ml-6 h-14 w-14 bg-black text-white border-none rounded-full text-xl font-normal
+                            flex items-center justify-center shadow-lg duration-500 hover:bg-neutral-600 max-sm:hidden' type="button" onClick={() => {copyTextToClipboard('batorgergely3@gmail.com')}}>
                             <img src={copySuccess ? Check : Mail} className='h-7 invert'></img>
                         </button>
                         <img className={`h-44 -scale-x-100 rotate-[62deg] ml-6 duration-[4000ms] delay-1000 ${curveAnim} max-2xl:hidden`} src={ArrowCurvy}></img>
