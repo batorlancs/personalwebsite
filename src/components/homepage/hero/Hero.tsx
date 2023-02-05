@@ -58,7 +58,7 @@ function Hero() {
     }
 
     return (
-        <div className='px-[10%] pt-48 w-full max-xl:pt-40 max-sm:pt-32'>
+        <div className='px-[10%] pt-48 w-full max-xl:pt-40 max-sm:pt-32 max-sm:p-[5%]'>
             <div className='absolute z-0 top-0 left-0 w-full h-full bg-black opacity-10'></div>
             <div className='flex justify-left items-start rounded-3xl'>
                 <Terminal />
@@ -72,7 +72,7 @@ function Hero() {
 
                     <h1 className='text-8xl font-bold text-black mt-6 mb-10 tracking-tighter max-2xl:text-7xl max-sm:text-5xl max-sm:mb-6'
                         data-aos='fade-left' data-aos-duration='2000' data-aos-delay='200'>
-                    Gergely Bátor
+                    Gergely_Bátor
                     </h1>
 
                     <h2 className='text-2xl text-black max-2xl:text-xl'

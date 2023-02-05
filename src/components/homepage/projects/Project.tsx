@@ -31,12 +31,13 @@ function Project() {
     }, [])
 
     return (
-        <div id='projects-page' className='px-[10%] mt-24 pb-24 w-full'>
-            <div className='flex flex-row justify-between items-center bg-white bg-opacity-20 py-6 px-12 rounded-3xl backdrop-blur-xl shadow-lg overflow-hidden' data-aos='fade-up'>
-                <h1 className='z-50 text-4xl font-bold'>
+        <div id='projects-page' className='px-[10%] mt-24 pb-24 w-full max-sm:mt-12 max-sm:px-[5%]'>
+            <div className='flex flex-row justify-between items-center bg-white bg-opacity-20 py-6 px-12 rounded-3xl backdrop-blur-xl shadow-lg overflow-hidden
+                max-md:bg-black max-md:bg-opacity-5 max-sm:px-6 max-sm:py-4' data-aos='fade-up'>
+                <h1 className='z-50 text-4xl font-bold max-sm:text-xl'>
                 My Latest Projects
                 </h1>
-                <button className='z-50 text-2xl text-stone-500'>
+                <button className='z-50 text-2xl text-stone-500 max-sm:text-lg'>
                 See All
                 </button>
             </div>

@@ -4,7 +4,7 @@ import GithubIcon from '../../pic/sociallogos/github.png';
 import FacebookIcon from '../../pic/sociallogos/facebook.png';
 import MenuIcon from '../../pic/menu.svg';
 
-const initState = { left: "ml-[10%]", right: "mr-[10%]"};
+const initState = { left: "ml-[10%] max-sm:ml-[5%]", right: "mr-[10%] max-sm:mr-[5%]"};
 
 const enum HEADER_ANIMATION {
     IN,
@@ -18,7 +18,7 @@ type Animation = {
 const reducer = (state: typeof initState, action: Animation): typeof initState => {
     switch(action.type) {
         case HEADER_ANIMATION.IN:
-            return {...state, left: "ml-[10%]", right:"mr-[10%]"}
+            return {...state, left: "ml-[10%] max-sm:ml-[5%]", right:"mr-[10%] max-sm:mr-[5%]"}
         case HEADER_ANIMATION.OUT:
             return {...state, left: "opacity-0 ml-0", right:"opacity-0 mr-0"}
         default:
@@ -49,7 +49,7 @@ function Header() {
 
     return (
       <div className='absolute h-40 w-full flex flex-row items-center justify-between top-0 left-0 z-50 font-body'>
-            <div className={`py-20 text-5xl font-cursive text-black duration-500 ${state.left} max-xl:text-4xl max-sm:text-3xl`}>
+            <div className={`py-20 text-5xl font-cursive text-black duration-500 ${state.left} max-2xl:text-4xl max-sm:text-3xl`}>
                 Portfolio
             </div>
             <div className={`flex flex-row items-center justify-end gap-16 w-[25%] h-full duration-500 ${state.right} max-2xl:gap-10 max-lg:hidden`}>
