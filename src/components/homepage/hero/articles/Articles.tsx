@@ -44,7 +44,9 @@ function Articles() {
                 </div>
 
                 <div className='hidden flex-row justify-between items-center bg-white bg-opacity-20 py-6 px-12 w-full rounded-3xl backdrop-blur-xl shadow-lg overflow-hidden
-                    max-xl:flex max-md:bg-black max-md:bg-opacity-5 max-sm:px-6 max-sm:py-4' data-aos='fade-up'>
+                    max-xl:flex max-md:bg-black max-md:bg-opacity-5 max-sm:px-6 max-sm:py-4'
+                    data-aos='fade-up'
+                    >
                     <h1 className='text-3xl font-bold max-sm:text-xl'>
                     My Coding Journey
                     </h1>
@@ -55,8 +57,7 @@ function Articles() {
 
                 <div className='flex flex-row h-72 gap-20 max-2xl:gap-10 max-md:flex-col max-md:h-auto max-sm:gap-5'>
                     {articles.slice(0, 2).map((article) => (
-                        <div className='w-full h-full p-6 rounded-3xl backdrop-blur-xl bg-white bg-opacity-20 shadow-lg'
-                        data-aos='fade-left' data-aos-duration='1000'>
+                        <div className='w-full h-full p-6 rounded-3xl backdrop-blur-xl bg-white bg-opacity-20 shadow-lg' data-aos='fade-up'>
                             <div className='flex flex-row items-center justify-between w-full'>
                                 <img className={`h-3 w-9 bg-emerald-600 bg-opacity-50 rounded-full`}></img>
                                 <p className='text-lg font-semibold opacity-50 max-sm:text-sm'>{calcTimeDifference(article.time)}</p>

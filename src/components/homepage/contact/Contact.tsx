@@ -1,7 +1,6 @@
-import React, { useReducer, useState } from 'react';
+import React, { useReducer, useState, useRef } from 'react';
 import Mail from '../../../pic/mailbox.svg';
 import Check from '../../../pic/check.svg';
-
 
 const initState = {name: "", email: "", message: "", success: false}
 
@@ -57,7 +56,7 @@ function Contact() {
     const [errorMsg, setErrorMsg] = useState("");
 
     return (
-        <div id='contact-page' className='relative pb-28 mt-4 px-[10%] max-sm:px-[5%] max-sm:pb-20' data-aos='fade-up'>
+        <div id='contact-page' className='relative pb-28 mt-4 max-w-[2000px] px-[10%] max-sm:px-[5%] max-sm:pb-16' data-aos='fade-up'>
             <div className='flex flex-row items-center justify-between rounded-3xl'>
 
                 <div className='min-w-[500px] pr-10 mr-20 max-2xl:min-w-[400px] max-xl:min-w-0 max-xl:w-full max-lg:hidden'>

@@ -9,7 +9,7 @@ import Check from '../../../pic/check.svg';
 import ArrowCurvy from '../../../pic/arrow-curvy2.png'
 
 function Hero() {
-
+    
     const [curveAnim, setCurveAnim] = useState('opacity-0');
     useEffect(() => {
         setCurveAnim('opacity-50');
@@ -58,29 +58,34 @@ function Hero() {
     }
 
     return (
-        <div className='px-[10%] pt-48 w-full max-xl:pt-40 max-sm:pt-32 max-sm:p-[5%]'>
+        <div className='px-[10%] pt-48 w-full max-w-[2000px] max-xl:pt-40 max-sm:pt-32 max-sm:p-[5%]'>
             <div className='absolute z-0 top-0 left-0 w-full h-full bg-black opacity-10'></div>
             <div className='flex justify-left items-start rounded-3xl'>
                 <Terminal />
                 <div className='pt-12'>
                     <h4 className='flex items-center text-2xl text-black m-0 max-2xl:text-xl'
-                        data-aos='fade-left' data-aos-duration='2000' data-aos-delay='0'>
+                        data-aos='fade-up' data-aos-duration='2000' data-aos-delay='0'
+                        >
                         <hr className='w-24 h-[1px] bg-black border-none max-sm:w-12'/>
                         <img className='h-12 mx-2' src={Hand}></img>
                     hi, my name is
                     </h4>
 
                     <h1 className='text-8xl font-bold text-black mt-6 mb-10 tracking-tighter max-2xl:text-7xl max-sm:text-5xl max-sm:mb-6'
-                        data-aos='fade-left' data-aos-duration='2000' data-aos-delay='200'>
+                        data-aos='fade-up' data-aos-duration='2000' data-aos-delay='200'
+                        >
                     Gergely_Bátor
                     </h1>
 
                     <h2 className='text-2xl text-black max-2xl:text-xl'
-                        data-aos='fade-left' data-aos-duration='2000' data-aos-delay='400'>
+                        data-aos='fade-up' data-aos-duration='2000' data-aos-delay='400'
+                        >
                     I am a Hungarian Software Developer in my 2nd year of Computer Science at Lancaster University. Feel free to reach out to me anytime!
                     </h2>
 
-                    <div className='flex flex-row items-start mt-16 max-sm:mt-10 max-sm:flex-col' data-aos='fade-left' data-aos-duration='2000' data-aos-delay='800'>
+                    <div className='flex flex-row items-start mt-16 max-sm:mt-10 max-sm:flex-col'
+                    data-aos='fade-up' data-aos-duration='2000' data-aos-delay='800'
+                    >
                         <button className='btn2 w-52 h-14 font-light relative border bg-black text-white border-none rounded-full text-xl tracking-wider leading-none overflow-hidden shadow-lg
                         max-sm:h-12 max-sm:w-44 max-sm:text-lg'
                         onClick={handleContactClick} type="button">
