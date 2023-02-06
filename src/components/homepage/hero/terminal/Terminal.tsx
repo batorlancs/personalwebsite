@@ -26,10 +26,10 @@ function Terminal() {
     }
 
     function handleKeyboardEvent(key: string) {
-        if (key == "ArrowUp") {
+        if (key === "ArrowUp") {
             updateHighlighted(-1);
         }
-        if (key == "ArrowDown") {
+        if (key === "ArrowDown") {
             updateHighlighted(1);
         }
         
@@ -45,10 +45,10 @@ function Terminal() {
     }
 
     return (
-        <div className='terminal z-10 rounded-3xl bg-black bg-opacity-80 duration-500 backdrop-blur-xl cursor-text min-w-[500px] mr-20 font-terminal
+        <div className='terminal mr-20 min-w-[500px] rounded-3xl bg-black bg-opacity-80 duration-500 backdrop-blur-xl cursor-text font-terminal
             max-2xl:min-w-[400px] max-xl:min-w-[200px] max-lg:min-w-[115px] max-lg:mr-12 max-md:hidden'
             onClick={() => {setFocusOnTerminalCommand()}}>
-            <div className='w-full h-10 rounded-t-3xl bg-black bg-opacity-1 flex flex-row gap-x-2 items-center justify-start pl-8 duration-500'>
+            <div className='pl-8 w-full h-10 rounded-t-3xl bg-black bg-opacity-1 flex flex-row gap-x-2 items-center justify-start duration-500'>
                 <div className='h-3 w-3 bg-green-500 rounded-full'></div>
                 <div className='h-3 w-3 bg-red-500 rounded-full'></div>
                 <div className='h-3 w-3 bg-yellow-300 rounded-full'></div>
@@ -56,7 +56,7 @@ function Terminal() {
             <div className='p-5 pr-24 h-[500px] overflow-y-hidden'>
                 <TerminalOptions highlighted={highlighted}/>
                 <div className='flex flex-row justify-start items-start max-xl:hidden'>
-                    <img src={ArrowRight} className='invert h-8'></img>
+                    <img src={ArrowRight} className='invert h-8' alt="arrow-right-icon"></img>
                     <input className='pt-[4px] bg-transparent border-none text-yellow-200 text-s w-full placeholder:text-yellow-200 placeholder:opacity-50 focus:outline-none'
                         type='text'
                         id='terminal-command'
