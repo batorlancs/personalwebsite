@@ -104,11 +104,11 @@ function Hero() {
                         <p className={`font-cursive whitespace-nowrap ml-12 mt-16 text-2xl duration-[4000ms] delay-1000 ${curveAnim}
                         max-2xl:mt-0 max-2xl:ml-6 max-2xl:text-xl max-sm:hidden`}>copy email<br/> to clipboard</p>
                     </div>
-                    <div className='relative mt-20 mb-5 hidden flex-row gap-3 items-center justify-start max-sm:flex' data-aos='fade-up' data-aos-delay='1000'>
+                    <div className='relative mt-20 mb-5 hidden flex-row gap-3 items-center justify-start max-sm:flex' data-aos='fade-up'>
                         <div className='h-10 w-[2px] rounded-full bg-black opacity-20'></div>
                         <p className='font-cursive text-2xl opacity-50'>batorgergely3@gmail.com</p>
                     </div>
-                    <div className='relative hidden flex-row gap-2 max-sm:flex' data-aos='fade-up' data-aos-delay='1200'>
+                    <div className='relative hidden flex-row gap-2 max-sm:flex' data-aos='fade-up'>
                         <a href="https://www.linkedin.com/in/gergely-bator/" target="_blank" className={linkStyle}>
                             <img src={LinkedinIcon}></img>
                         </a>
