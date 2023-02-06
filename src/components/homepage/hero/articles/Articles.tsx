@@ -30,7 +30,7 @@ function Articles() {
     }, [])
 
     return (
-        <div className='pt-56 max-xl:pt-32 max-md:pt-56'>
+        <div className='pt-56 max-xl:pt-32 max-md:pt-56 max-sm:pt-32'>
             <div className='relative flex flex-row justify-between items-center h-72 min-h-72 gap-20
             max-xl:flex-col max-xl:h-auto max-xl:gap-20 max-md:gap-10 max-sm:gap-5'>
 
