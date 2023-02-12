@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import ArrowRight from "../../../../pic/arrow-right.svg";
 import "./Articles.css";
 import "aos/dist/aos.css";
@@ -14,6 +15,7 @@ type ArticleData = {
 };
 
 function Articles() {
+    const navigate = useNavigate();
 	const [articles, setArticles] = useState<ArticleData[]>([]);
 
 	const getArticles = async () => {
@@ -44,7 +46,10 @@ function Articles() {
 						Take a look at my recent articles about my progress and
 						plans for the future.
 					</p>
-					<button className="articlebutton mt-10 flex h-14 flex-row items-center justify-start text-2xl tracking-wider text-emerald-600 duration-500">
+					<button
+                        className="articlebutton mt-10 flex h-14 flex-row items-center justify-start text-2xl tracking-wider text-emerald-600 duration-500"
+                        onClick={() => {navigate("/articles")}}
+                    >
 						<img
 							src={ArrowRight}
 							className="h-8 duration-500"
@@ -61,7 +66,10 @@ function Articles() {
 					<h1 className="text-3xl font-bold max-sm:text-xl">
 						My Coding Journey
 					</h1>
-					<button className="whitespace-nowrap text-xl text-stone-500 max-sm:text-lg">
+					<button
+                        className="whitespace-nowrap text-xl text-stone-500 max-sm:text-lg"
+                        onClick={() => {navigate("/articles")}}
+                    >
 						See All
 					</button>
 				</div>

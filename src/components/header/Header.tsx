@@ -3,6 +3,7 @@ import LinkedinIcon from "../../pic/sociallogos/linkedin.png";
 import GithubIcon from "../../pic/sociallogos/github.png";
 import FacebookIcon from "../../pic/sociallogos/facebook.png";
 import MenuIcon from "../../pic/menu.svg";
+import { useNavigate } from "react-router-dom";
 
 const initState = {
 	left: "ml-[10%] max-sm:ml-[5%]",
@@ -41,6 +42,7 @@ const reducer = (
 };
 
 function Header() {
+    const navigate = useNavigate();
 	const [state, dispatch] = useReducer(reducer, initState);
 
 	// tailwind styles
@@ -63,11 +65,12 @@ function Header() {
 
 	return (
 		<div className="absolute top-0 left-0 z-50 flex h-40 w-full flex-row items-center justify-between font-body">
-			<div
-				className={`py-20 font-cursive text-5xl text-black duration-500 ${state.left} max-2xl:text-4xl max-sm:text-3xl`}
+			<button
+				className={`my-20 font-cursive text-5xl text-black duration-500 ${state.left} max-2xl:text-4xl max-sm:text-3xl`}
+                onClick = {() => {navigate("/")}}
 			>
 				Portfolio
-			</div>
+			</button>
 			<div
 				className={`flex h-full w-[25%] flex-row items-center justify-end gap-16 duration-500 ${state.right} max-2xl:gap-10 max-lg:hidden`}
 			>

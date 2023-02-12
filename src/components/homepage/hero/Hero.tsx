@@ -10,11 +10,12 @@ import ArrowCurvy from "../../../pic/arrow-curvy2.png";
 import LinkedinIcon from "../../../pic/sociallogos/linkedin.png";
 import GithubIcon from "../../../pic/sociallogos/github.png";
 import FacebookIcon from "../../../pic/sociallogos/facebook.png";
+import { useNavigate } from "react-router-dom";
 
-const linkStyle =
-	"h-12 w-10 flex flex-row items-center justify-start rounded-full overflow-hidden duration-500 opacity-50";
+const linkStyle = "h-12 w-10 flex flex-row items-center justify-start rounded-full overflow-hidden duration-500 opacity-50";
 
 function Hero() {
+
 	// animation for the curvy arrow on load
 	const [curveAnim, setCurveAnim] = useState("opacity-0");
 	useEffect(() => {

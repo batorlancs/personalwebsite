@@ -3,6 +3,7 @@ import ProjectCard from "./ProjectCard";
 import "aos/dist/aos.css";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../firebase";
+import { useNavigate } from "react-router-dom";
 
 type ProjectData = {
 	id: string;
@@ -15,6 +16,8 @@ type ProjectData = {
 };
 
 function Project() {
+    const navigate = useNavigate();
+
 	const [projects, setProjects] = useState<ProjectData[]>([]);
 
 	const getProjects = async () => {
@@ -47,7 +50,10 @@ function Project() {
 				<h1 className="text-4xl font-bold max-sm:text-xl">
 					My Latest Projects
 				</h1>
-				<button className="text-2xl text-stone-500 max-sm:text-lg">
+				<button
+                    className="text-2xl text-stone-500 max-sm:text-lg"
+                    onClick={() => {navigate("/projects")}}
+                >
 					See All
 				</button>
 			</div>
