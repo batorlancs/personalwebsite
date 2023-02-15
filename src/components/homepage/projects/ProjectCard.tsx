@@ -26,7 +26,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
                     alt="project-preview"
 				></img>
 			</div>
-			<div className="flex h-full w-full flex-col items-start justify-center max-md:px-6 max-md:pb-12">
+			<div className="flex h-full w-full flex-col items-start max-md:px-6 max-md:pb-12">
 				<hr className="mb-10 h-[1px] w-[10%] border-none bg-black max-xl:hidden" />
 				<h4 className="mb-5 text-2xl text-emerald-600 max-2xl:text-xl max-sm:mb-2 max-sm:text-sm">
 					{props.data.tech}

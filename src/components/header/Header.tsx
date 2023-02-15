@@ -42,13 +42,13 @@ const reducer = (
 };
 
 function Header() {
+    
     const navigate = useNavigate();
 	const [state, dispatch] = useReducer(reducer, initState);
 
 	// tailwind styles
 	const buttonStyle = "text-black text-2xl tracking-wider max-2xl:text-xl";
-	const linkStyle =
-		"h-14 w-14 rounded-full overflow-hidden duration-500 bg-white bg-opacity-0 hover:bg-opacity-60 max-2xl:h-12 max-2xl:w-12";
+	const linkStyle = "h-14 w-14 rounded-full overflow-hidden duration-500 bg-white bg-opacity-0 hover:bg-opacity-60 max-2xl:h-12 max-2xl:w-12";
 
 	window.addEventListener("scroll", () => {
 		if (window.scrollY <= 0) {
@@ -62,6 +62,17 @@ function Header() {
 		document.getElementById("projects-page")?.scrollIntoView();
 		window.scrollBy(0, -50);
 	};
+
+    const handleSkillsClick = () => {
+        document.getElementById("skills-page")?.scrollIntoView();
+		window.scrollBy(0, -50);
+    }
+
+    const handleExperienceClick = () => {
+        document.getElementById("experience-page")?.scrollIntoView();
+		window.scrollBy(0, -50);
+    }
+
 
 	return (
 		<div className="absolute top-0 left-0 z-50 flex h-40 w-full flex-row items-center justify-between font-body">
@@ -77,8 +88,12 @@ function Header() {
 				<button className={buttonStyle} onClick={handleProjectClick}>
 					projects
 				</button>
-				<button className={buttonStyle}>skills</button>
-				<button className={buttonStyle}>experience</button>
+				<button className={buttonStyle} onClick={handleSkillsClick}>
+                    skills
+                </button>
+				<button className={buttonStyle} onClick={handleExperienceClick}>
+                    experience
+                </button>
 				<div className="flex flex-row gap-5">
 					<a
 						href="https://www.linkedin.com/in/gergely-bator/"
