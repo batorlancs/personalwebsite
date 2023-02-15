@@ -1,10 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import CodingSkills from "./CodingSkills";
+import GroupSkills from "./GroupSkills";
+import OtherSkills from "./OtherSkills";
 
 function Skills() {
 
     const navigate = useNavigate();
-    const boxStyle = "bg-white bg-opacity-30 shadow-xl backdrop-blur-xl rounded-3xl w-full";
 
     return (
         <div
@@ -23,19 +25,14 @@ function Skills() {
                     className="text-2xl text-stone-500 max-sm:text-lg"
                     onClick={() => {navigate("/projects")}}
                 >
-					See All
+					See on LinkedIn
 				</button>
 			</div>
-            <div className="flex flex-row min-h-[400px] justify-between gap-20 mt-24">
-                <div className="bg-neutral-400 bg-opacity-30 shadow-xl backdrop-blur-xl rounded-3xl min-w-[500px] w-[500px]">
 
-                </div>
-                <div className={boxStyle}>
-
-                </div>
-                <div className={boxStyle}>
-
-                </div>
+            <div className="flex flex-row min-h-[400px] justify-between items-center gap-20 mt-24">
+                <CodingSkills />
+                <GroupSkills />
+                <OtherSkills />
             </div>
         </div>
     )

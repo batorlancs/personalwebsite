@@ -22,7 +22,7 @@ function Experience() {
                     className="text-2xl text-stone-500 max-sm:text-lg"
                     onClick={() => {navigate("/projects")}}
                 >
-					See All
+					See on LinkedIn
 				</button>
 			</div>
         </div>
