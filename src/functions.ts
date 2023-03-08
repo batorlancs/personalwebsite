@@ -20,3 +20,28 @@ export const calcTimeDifference = (time: number): string => {
 		return a > 1 ? a + " minutes ago" : "a minute ago";
 	}
 };
+
+const DEFAULT_PARAMS = {
+    "prompt": "Say this is a test",
+    "model": "text-davinci-003",
+    "max_tokens": 7,
+    "temperature": 0
+}
+
+
+export async function query(params = {}) {
+    const params_ = { ...DEFAULT_PARAMS, ...params };
+    const requestOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer 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"
+      },
+      body: JSON.stringify(params_)
+    };
+    const response = await fetch('https://api.openai.com/v1/completions', requestOptions);
+    const data = await response.json();
+    // console.log(requestOptions);
+    // console.log(data);
+    return data.choices[0].text;
+};

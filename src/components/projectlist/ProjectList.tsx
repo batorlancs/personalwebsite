@@ -34,7 +34,7 @@ const ProjectList: React.FC<ProjectListProps> = (props) => {
 						<p className="mb-2 font-terminal text-lg text-emerald-700">
 							{project.tech}
 						</p>
-						<h1 className="mb-4 text-2xl font-semibold uppercase">
+						<h1 className="mb-4 text-2xl font-semibold">
 							{project.title}
 						</h1>
 						<p className="text-lg">{project.desc}</p>

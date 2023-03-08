@@ -4,44 +4,40 @@ import TerminalOptions from './terminalOptions/TerminalOptions';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './Terminal.css';
+// import { Configuration, OpenAIApi } from "openai";
+import { query } from "../../../../functions";
+
+// const configuration = new Configuration({
+//     organization: "org-pYAXnuYfiqgUTq4SUXb3gqbz",
+//     apiKey: "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",
+// });
 
 function Terminal() {
 
+    // const openai = new OpenAIApi(configuration);
+    const [message, setMessage] = useState("");
+    const [response, setResponse] = useState("");
+
+    const handleClick = async () => {
+        console.log("getting data ...");
+        const response = query()
+        .then((res) => {
+            console.log(res);
+            console.log("got the data");
+        });
+    };
+    
+
     const [command, setCommand] = useState("");
-    const [highlighted, setHighlighted] = useState(0);
-    const numberOfOptions = 3;
     const inputRef = useRef<HTMLInputElement>(null);
     
     useEffect(() => {
-        document.addEventListener("keydown", (event) => {
-            handleKeyboardEvent(event.key);
-        })
         setFocusOnTerminalCommand();
         AOS.init({duration: 2000});
-
     }, []);
 
     function setFocusOnTerminalCommand() {
         inputRef.current?.focus();
-    }
-
-    function handleKeyboardEvent(key: string) {
-        if (key === "ArrowUp") {
-            updateHighlighted(-1);
-        }
-        if (key === "ArrowDown") {
-            updateHighlighted(1);
-        }
-        
-    }
-
-    function updateHighlighted(inc: number) {
-        setHighlighted(prev => {
-            if ((prev + inc) < 0) {
-                return numberOfOptions - 1;
-            }
-            return (prev + inc) % numberOfOptions;
-        });
     }
 
     return (
@@ -54,18 +50,20 @@ function Terminal() {
                 <div className='h-3 w-3 bg-yellow-300 rounded-full'></div>
             </div>
             <div className='p-5 pr-24 h-[500px] overflow-y-hidden'>
-                <TerminalOptions highlighted={highlighted}/>
-                <div className='flex flex-row justify-start items-start max-xl:hidden'>
+                <TerminalOptions />
+                <div onClick={handleClick} className='flex flex-row justify-start items-start max-xl:hidden'>
                     <img src={ArrowRight} className='invert h-8' alt="arrow-right-icon"></img>
                     <input className='pt-[4px] bg-transparent border-none text-yellow-200 text-s w-full placeholder:text-yellow-200 placeholder:opacity-50 focus:outline-none'
                         type='text'
                         id='terminal-command'
-                        placeholder='terminal --help'
+                        placeholder='cmd --help'
                         ref={inputRef}
-                        onChange={((event) => {setCommand(event.target.value)})}>
+                        onChange={((event) => {setMessage(event.target.value)})}>
                     </input>
+                    <input type="submit" className='hidden'/>
                 </div>
             </div>
+            <div>{response}</div>
         </div>
     )
 }
