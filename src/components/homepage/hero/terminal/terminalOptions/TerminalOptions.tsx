@@ -5,24 +5,9 @@ import ArrowRight from "../../../../../pic/arrow-right.svg";
 const TerminalOptions = () => {
 
 	const terminalWelcome = [
-		"hi",
-		"this is the command line",
-		"what would you like to do?",
-	];
-
-	const terminalOptions = [
-		{
-			title: "discover all my projects",
-			order: 0,
-		},
-		{
-			title: "learn about my skills",
-			order: 1,
-		},
-		{
-			title: "see my experience on LinkedIn",
-			order: 2,
-		},
+		"hi!",
+		"I am using 'OpenAI' API to answer your questions.",
+		"Ask me anything that you want to know about me!",
 	];
 
 	return (

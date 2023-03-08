@@ -22,9 +22,8 @@ export const calcTimeDifference = (time: number): string => {
 };
 
 const DEFAULT_PARAMS = {
-    "prompt": "Say this is a test",
     "model": "text-davinci-003",
-    "max_tokens": 7,
+    "max_tokens": 80,
     "temperature": 0
 }
 
@@ -35,7 +34,7 @@ export async function query(params = {}) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": "Bearer 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"
+        "Authorization": "Bearer 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"
       },
       body: JSON.stringify(params_)
     };

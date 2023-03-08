@@ -82,7 +82,7 @@ function Header() {
                 onClick = {() => {navigate("/")}}
 			>
                 <img className="h-12" src={TerminalIcon}></img>
-				<p className="text-4xl">command line</p>
+				<p className="text-4xl">portfolio</p>
 			</button>
 			<div
 				className={`flex h-full w-[25%] flex-row items-center justify-end gap-16 duration-500 ${state.right} max-2xl:gap-10 max-lg:hidden`}
