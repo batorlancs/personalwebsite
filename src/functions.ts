@@ -23,7 +23,7 @@ export const calcTimeDifference = (time: number): string => {
 
 const DEFAULT_PARAMS = {
     "model": "text-davinci-003",
-    "max_tokens": 80,
+    "max_tokens": 120,
     "temperature": 0
 }
 
@@ -34,10 +34,11 @@ export async function query(params = {}) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": "Bearer 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"
+        "Authorization": "Bearer " + String(process.env.REACT_APP_API_KEY),
       },
       body: JSON.stringify(params_)
     };
+    console.log(process.env);
     const response = await fetch('https://api.openai.com/v1/completions', requestOptions);
     const data = await response.json();
     // console.log(requestOptions);

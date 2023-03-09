@@ -6,6 +6,7 @@ import 'aos/dist/aos.css';
 import './Terminal.css';
 import { query } from "../../../../functions";
 import LoadingAnimation from "../../../../pic/loadingAnimation.svg";
+import personalinfo from "./personalinfo";
 
 type DialogPart = {
     "question": string,
@@ -13,8 +14,6 @@ type DialogPart = {
 }
 
 function Terminal() {
-
-    const generalInfo: string = "Pretend to be this person. Your name is Gergely Bator and you are 22 years old. You are 188 cm tall. You live in Hungary, but you are studying in the United Kingdom. You are studying Computer Science at Lancaster University and you are in you second year. You have relevant experienced gained at 'I.L.R. Kft.', where you made SQL queries and used Prestashop to add small features on the companies website. Your hobbies include volleyball, basketball, piano, photoshop, and video games. You are familiar with git and team work, because of a recent Pixel Editor group project in Java. Your other Java projects include a Chess Game and Wordle like game (but with colours). You speak Native Hungarian, Advanced English and Beginner German. You are on a Student Visa in the United Kingdom, which will expire in 2024. You have a driver's license. You went to high school to Lovassy Laszlo Gimnazium in Veszprem, Hungary. You have also gained interpersonal and communication skills on an exchange year in the Unites States moving out of your comfort zone. Answer in one sentence."
 
     const [message, setMessage] = useState<string>("");
     const [dialog, setDialog] = useState<DialogPart[]>([]);
@@ -29,9 +28,13 @@ function Terminal() {
         AOS.init({duration: 2000});
     }, []);
 
+    useEffect(() => {
+        terminalContentRef.current?.scrollTo(0, terminalContentRef.current?.scrollHeight);
+    }, [dialog, isLoading])
+
     const getData = async () => {
         console.log("getting data...");
-        const response = query({"prompt": generalInfo + message + "?"})
+        const response = query({"prompt": personalinfo + message + "?"})
         .then((res) => {
             console.log(isLoading);
             console.log("got data");
@@ -42,6 +45,7 @@ function Terminal() {
 
     const handleSubmit = (e:any) => {
         e.preventDefault();
+        if (isLoading === true || message === "") return;
         setIsLoading(true);
         getData();
         if (inputPlaceHolder === "ask here") setInputPlaceHolder("ask more");
@@ -63,7 +67,7 @@ function Terminal() {
     }
 
     return (
-        <div className='terminal mr-20 min-w-[500px] max-w-[500px] rounded-3xl bg-black bg-opacity-80 duration-500 backdrop-blur-xl cursor-text font-terminal
+        <div className='terminal mr-20 min-w-[500px] max-w-[500px] rounded-3xl overflow-hidden bg-black bg-opacity-80 duration-500 backdrop-blur-xl cursor-text font-terminal
             max-2xl:min-w-[400px] max-xl:min-w-[200px] max-lg:min-w-[115px] max-lg:mr-12 max-md:hidden'
             onClick={() => {setFocusOnTerminalCommand()}}>
             <div className='pl-8 w-full h-10 rounded-t-3xl bg-black bg-opacity-1 flex flex-row gap-x-2 items-center justify-start duration-500'>
@@ -71,7 +75,7 @@ function Terminal() {
                 <div className='h-3 w-3 bg-red-500 rounded-full'></div>
                 <div className='h-3 w-3 bg-yellow-300 rounded-full'></div>
             </div>
-            <div ref={terminalContentRef} className='p-5 pr-12 h-[500px] overflow-y-scroll '>
+            <div ref={terminalContentRef} className='p-5 pr-12 h-[500px] scrollbar scrollbar-track-neutral-700 scrollbar-thumb-emerald-500'>
                 <TerminalOptions />
                 {dialog.map((dialogPart) => (
                     <div>
@@ -103,11 +107,14 @@ function Terminal() {
                     </input>
                     <input type="submit" className='hidden'/>
                 </form>
-                {isLoading &&
+                {isLoading
+                ?
                 <div className='flex flex-row justify-start items-start max-xl:hidden py-2'>
                     <p className='text-xl pr-1 pt-[3px]'>👨🏼‍💼</p>
                     <img src={LoadingAnimation} className='pt-[4px] h-6 opacity-50'></img>
                 </div>
+                :
+                <div className='pb-12'></div>
                 }
             </div>
         </div>
