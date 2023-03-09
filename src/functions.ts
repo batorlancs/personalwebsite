@@ -38,10 +38,8 @@ export async function query(params = {}) {
       },
       body: JSON.stringify(params_)
     };
-    console.log(process.env);
     const response = await fetch('https://api.openai.com/v1/completions', requestOptions);
     const data = await response.json();
-    // console.log(requestOptions);
-    // console.log(data);
+    
     return data.choices[0].text;
 };

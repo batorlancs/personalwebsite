@@ -33,11 +33,9 @@ function Terminal() {
     }, [dialog, isLoading])
 
     const getData = async () => {
-        console.log("getting data...");
         const response = query({"prompt": personalinfo + message + "?"})
         .then((res) => {
             console.log(isLoading);
-            console.log("got data");
             pushToDialog(res);
             setIsLoading(false);
         });
@@ -49,10 +47,6 @@ function Terminal() {
         setIsLoading(true);
         getData();
         if (inputPlaceHolder === "ask here") setInputPlaceHolder("ask more");
-    }
-
-    function setIsLoadingTo(isLoading: boolean) {
-        setIsLoading(isLoading);
     }
 
     function pushToDialog(val: string) {
