@@ -4,6 +4,7 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import ProjectList from "./components/projectlist/ProjectList";
 import ArticleList from "./components/articlelist/ArticleList";
+import ArticlePage from "./components/articlepage/ArticlePage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "./firebase";
@@ -24,6 +25,8 @@ type ArticleData = {
 	title: string;
 	desc: string;
 	time: number;
+    content: Array<string>;
+    tags: Array<string>;
 };
 
 function App() {
@@ -73,6 +76,7 @@ function App() {
 				<Route path="/" element={<Home />} />
 				<Route path="/projects" element={<ProjectList projects={projects}/>} />
 				<Route path="/articles" element={<ArticleList articles={articles}/>} />
+                <Route path="/article/:id" element={<ArticlePage />}/>
 			</Routes>
 			<Footer />
 		</BrowserRouter>

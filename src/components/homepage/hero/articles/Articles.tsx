@@ -6,12 +6,15 @@ import "aos/dist/aos.css";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../../firebase";
 import { calcTimeDifference } from "../../../../functions";
+import { Link } from "react-router-dom";
 
 type ArticleData = {
 	id: string;
 	title: string;
 	desc: string;
 	time: number;
+    content: Array<string>;
+    tags: Array<string>;
 };
 
 function Articles() {
@@ -76,11 +79,12 @@ function Articles() {
 
 				<div className="flex h-72 flex-row gap-20 max-2xl:gap-10 max-md:h-auto max-md:flex-col max-sm:gap-5">
 					{articles.slice(0, 2).map((article) => (
-						<div
-							className="h-full w-full rounded-3xl bg-white bg-opacity-20 p-6 shadow-lg backdrop-blur-xl"
-							data-aos="fade-up"
-							key={article.title}
-						>
+						<Link
+                            className="h-full w-full rounded-3xl bg-white bg-opacity-20 p-6 shadow-lg backdrop-blur-xl cursor-pointer hover:bg-opacity-50"
+                            data-aos="fade-up"
+                            key={article.title}
+                            to={`/article/${article.id}`}
+                        >
 							<div className="flex w-full flex-row items-center justify-between">
 								<div className="h-3 w-9 rounded-full bg-emerald-600 bg-opacity-50"></div>
 								<p className="text-lg font-semibold opacity-50 max-sm:text-sm">
@@ -93,7 +97,7 @@ function Articles() {
 							<p className="mt-2 pb-10 text-xl max-sm:mt-0 max-sm:pb-4 max-sm:text-lg">
 								{article.desc}
 							</p>
-						</div>
+						</Link>
 					))}
 				</div>
 			</div>
