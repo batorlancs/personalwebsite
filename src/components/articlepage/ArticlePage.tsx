@@ -4,6 +4,7 @@ import { getDoc, doc } from "firebase/firestore";
 import { db } from "../../firebase";
 import { Link } from "react-router-dom";
 import ArrowRight from "../../pic/arrow-right.svg";
+import LoadingGif from "../../pic/loadingAnimation.svg";
 
 type ArticleData = {
 	id: string;
@@ -41,9 +42,11 @@ function ArticlePage() {
 	}, []);
 
 	return (
-        <div className="bg-gray-200 bg-opacity-60 flex justify-center items-start px-[10%] max-sm:px-[5%]">
+        <div className="bg-gray-100 flex justify-center items-start px-[10%] max-sm:px-[5%]">
             {articleData == null ?
-            <div className="bg-gray-100 z-10 fixed top-0 bottom-0 left-0 right-0"></div>
+            <div className="bg-gray-100 z-10 fixed top-0 bottom-0 left-0 right-0 flex items-center justify-center">
+                <img src={LoadingGif} className="h-24 opacity-30"></img>
+            </div>
             :
             <div className="max-w-[2000px] w-[750px] pt-56 pb-44 max-sm:pt-44 max-sm:pb-20">
                 <div className="flex flex-row gap-4">

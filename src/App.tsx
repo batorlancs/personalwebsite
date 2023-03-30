@@ -63,6 +63,7 @@ function App() {
 	useEffect(() => {
 		getProjects();
 		getArticles();
+        document.body.style.backgroundColor = "#000";
 	}, []);
 
     console.log(projects);

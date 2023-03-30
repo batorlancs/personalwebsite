@@ -687,6 +687,9 @@ video {
 .h-\[100\%\]{
   height: 100%;
 }
+.h-24{
+  height: 6rem;
+}
 .min-h-\[300px\]{
   min-height: 300px;
 }
@@ -989,6 +992,9 @@ video {
 }
 .bg-opacity-60{
   --tw-bg-opacity: 0.6;
+}
+.bg-opacity-10{
+  --tw-bg-opacity: 0.1;
 }
 .bg-\[url\(\'\.\.\/pic\/waves6\.png\'\)\]{
   background-image: url('../pic/waves6.png');
