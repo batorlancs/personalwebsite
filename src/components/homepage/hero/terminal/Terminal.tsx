@@ -51,7 +51,8 @@ function Terminal() {
 
     function pushToDialog(val: string) {
         setDialog((prev) => {
-            return [...prev, {"question": message, "answer": val}]
+            // if no answer display ...
+            return [...prev, {"question": message, "answer": val === "" ? "..." : val}]
         });
         setMessage("");
     }

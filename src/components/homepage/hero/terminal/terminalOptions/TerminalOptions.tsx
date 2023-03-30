@@ -40,7 +40,7 @@ const TerminalOptions = () => {
                         </p>
                     ))}
                     {terminalOptions.map((terminalOption) => (
-                        <p className=" text-red-400 opacity-50">
+                        <p className=" text-red-400">
                             {terminalOption}
                         </p>
                     ))}
