@@ -1,0 +1,16 @@
+.itemmainbox:hover .itemtext {
+    width: auto;
+    opacity: 100;
+    padding-left: 20px;
+    padding-right: 30px;
+}
+
+.itemmainbox:hover .itembox {
+    background-color: black;
+}
+
+.itemtext {
+    width: 0;
+    opacity: 0;
+    padding: 0;
+}
