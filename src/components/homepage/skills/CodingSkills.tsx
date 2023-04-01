@@ -53,11 +53,11 @@ function CodingSkills() {
 				{skillsData.map((skill) => (
 					<div>
 						<h2
-							className={`opacity-1 mb-2 pl-6 text-xl font-terminal font-semibold drop-shadow-lg ${skill.textStyle} max-sm:text-lg`}
+							className={`opacity-1 mb-2 pl-6 text-xl font-terminal font-semibold drop-shadow-lg ${skill.textStyle} max-sm:text-sm`}
 						>
 							{skill.name}
 						</h2>
-						<div className="grid h-2 w-full grid-cols-10 overflow-hidden rounded-full bg-black bg-opacity-5">
+						<div className="grid h-2 w-full grid-cols-10 overflow-hidden rounded-full bg-black bg-opacity-5 max-sm:h-1">
 							{getStuff(skill.strength, skill.style)}
 						</div>
 					</div>

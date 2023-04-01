@@ -78,11 +78,11 @@ function Header() {
 	return (
 		<div className="absolute top-0 left-0 z-50 flex h-40 w-full flex-row items-center justify-between font-body">
 			<button
-				className={`flex gap-5 items-center my-20 font-cursive text-5xl text-black duration-500 ${state.left} max-2xl:text-4xl max-sm:text-3xl`}
+				className={`flex gap-5 items-center my-20 font-terminal text-black duration-500 ${state.left} max-lg:gap-2`}
                 onClick = {() => {navigate("/")}}
 			>
-                <img className="h-12" src={TerminalIcon}></img>
-				<p className="text-4xl">portfolio</p>
+                <img className="h-12 max-lg:h-10 max-sm:h-8" src={TerminalIcon}></img>
+				<p className="text-2xl max-lg:text-2xl max-sm:text-xl">portfolio</p>
 			</button>
 			<div
 				className={`flex h-full w-[25%] flex-row items-center justify-end gap-16 duration-500 ${state.right} max-2xl:gap-10 max-lg:hidden`}
