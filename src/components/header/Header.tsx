@@ -1,10 +1,10 @@
-import React, { useReducer } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import LinkedinIcon from "../../pic/sociallogos/linkedin.png";
 import GithubIcon from "../../pic/sociallogos/github.png";
 import FacebookIcon from "../../pic/sociallogos/facebook.png";
 import MenuIcon from "../../pic/menu.svg";
 import TerminalIcon from "../../pic/terminalcon.svg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const initState = {
 	left: "ml-[10%] max-sm:ml-[5%]",
@@ -46,6 +46,7 @@ function Header() {
     
     const navigate = useNavigate();
 	const [state, dispatch] = useReducer(reducer, initState);
+    const [headerTitle, setHeaderTitle] = useState<string>("my_portfolio");
 
 	// tailwind styles
 	const buttonStyle = "text-black text-2xl tracking-wider max-2xl:text-xl";
@@ -74,6 +75,13 @@ function Header() {
 		window.scrollBy(0, -50);
     }
 
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        if (pathname === "/") setHeaderTitle("my_portfolio");
+        else setHeaderTitle("go_back_home");
+    }, [pathname]);
+
 
 	return (
 		<div className="absolute top-0 left-0 z-50 flex h-40 w-full flex-row items-center justify-between font-body">
@@ -82,7 +90,7 @@ function Header() {
                 onClick = {() => {navigate("/")}}
 			>
                 <img className="h-12 max-lg:h-10 max-sm:h-8" src={TerminalIcon}></img>
-				<p className="text-2xl max-lg:text-2xl max-sm:text-xl">portfolio</p>
+				<p className="text-2xl max-lg:text-2xl max-sm:text-xl">{headerTitle}</p>
 			</button>
 			<div
 				className={`flex h-full w-[25%] flex-row items-center justify-end gap-16 duration-500 ${state.right} max-2xl:gap-10 max-lg:hidden`}

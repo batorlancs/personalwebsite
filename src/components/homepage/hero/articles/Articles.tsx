@@ -5,7 +5,7 @@ import "./Articles.css";
 import "aos/dist/aos.css";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../../firebase";
-import { calcTimeDifference } from "../../../../functions";
+import { calcTimeDifference, calcArticleColor } from "../../../../functions";
 import { Link } from "react-router-dom";
 
 type ArticleData = {
@@ -86,7 +86,7 @@ function Articles() {
                             to={`/article/${article.id}`}
                         >
 							<div className="flex w-full flex-row items-center justify-between">
-								<div className="h-3 w-9 rounded-full bg-emerald-600 bg-opacity-50"></div>
+								<div className={`h-3 w-9 rounded-full bg-opacity-50 ${calcArticleColor(article.tags)}`}></div>
 								<p className="text-lg font-semibold opacity-50 max-sm:text-sm">
 									{calcTimeDifference(article.time)}
 								</p>

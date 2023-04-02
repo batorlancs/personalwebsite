@@ -19,9 +19,9 @@ const ProjectListItem: React.FC<ProjectListItemProps> = (props) => {
 		<a
 			href={props.project.github}
 			target="_blank"
-			className="itemmainbox min-h-[300px] rounded-3xl bg-white bg-opacity-30 shadow-xl duration-500 hover:opacity-80"
+			className="itemmainbox min-h-[300px] rounded-3xl bg-white bg-opacity-30 shadow-xl duration-500 hover:opacity-80 max-sm:hover:border-0"
 		>
-			<div className="relative h-[200px] min-w-[100px] overflow-hidden rounded-t-3xl bg-white max-lg:h-[100px]">
+			<div className="relative h-[200px] min-w-[100px] overflow-hidden rounded-t-2xl bg-white max-lg:h-[100px]">
 				<img
 					src={props.project.pic}
 					className="absolute top-0 left-0 min-h-full min-w-full object-cover"

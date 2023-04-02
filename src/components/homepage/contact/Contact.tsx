@@ -1,6 +1,8 @@
 import React, { useReducer, useState } from "react";
 import Mail from "../../../pic/mailbox.svg";
 import Check from "../../../pic/check.svg";
+import emailjs from "emailjs-com";
+import LoadingIcon from "../../../pic/loadingAnimation.svg";
 
 const initState = { name: "", email: "", message: "", success: false };
 
@@ -35,10 +37,11 @@ const reducer = (
 };
 
 function Contact() {
+
+    const [loadingAnim, setLoadingAnim] = useState<boolean>(false);
+
 	function handleSubmit() {
-		console.log("name: " + state.name);
-		console.log("email: ", state.email);
-		console.log("message: " + state.message);
+        if (state.success) return;
 
 		if (state.name === "" || state.email === "" || state.message === "") {
 			setErrorMsg("Please fill out all forms");
@@ -50,8 +53,23 @@ function Contact() {
 			return;
 		}
 
-		dispatch({ type: FORM_ACTION.SUCCESS, value: "" });
-		setErrorMsg("");
+        setErrorMsg("");
+        setLoadingAnim(true);
+
+        emailjs.send("service_bgk8uir", "template_k2rubuo", {
+            user_name: state.name,
+            user_email: state.email,
+            message: state.message
+        }, "9_NI2V_0kP0kR4mjz").then((response) => {
+            console.log("SUCCESS!", response.status, response.text);
+		    dispatch({ type: FORM_ACTION.SUCCESS, value: "" });
+            setLoadingAnim(false);
+        }, (error) => {
+            console.log("FAILED...", error);
+            setErrorMsg("something went wrong..");
+            setLoadingAnim(false);
+        });
+
 	}
 
 	const [state, dispatch] = useReducer(reducer, initState);
@@ -125,7 +143,9 @@ function Contact() {
 						</p>
 					)}
 
-					<button
+                    { loadingAnim ?
+                    <img src={LoadingIcon} className="h-12 mt-5"></img> :
+                    <button
 						onClick={handleSubmit}
 						className="mt-5 mb-5 rounded-full bg-black px-12 py-4 text-xl tracking-widest text-white max-sm:py-2 max-sm:px-10 max-sm:text-lg"
 					>
@@ -135,6 +155,9 @@ function Contact() {
 							<p>Submit</p>
 						)}
 					</button>
+                    }
+					
+                    
 				</div>
 			</div>
 		</div>
