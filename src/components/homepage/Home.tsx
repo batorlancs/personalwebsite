@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import Hero from "./hero/Hero";
 import Project from "./projects/Project";
 import Contact from "./contact/Contact";
@@ -7,6 +8,7 @@ import Experience from "./experience/Experience";
 import AOS from "aos";
 
 function Home() {
+
 	useEffect(() => {
 		AOS.init({ duration: 1000 });
 	}, []);

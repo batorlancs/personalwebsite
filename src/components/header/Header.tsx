@@ -5,6 +5,7 @@ import FacebookIcon from "../../pic/sociallogos/facebook.png";
 import MenuIcon from "../../pic/menu.svg";
 import TerminalIcon from "../../pic/terminalcon.svg";
 import { useNavigate, useLocation } from "react-router-dom";
+import Navbar from "./Navbar";
 
 const initState = {
 	left: "ml-[10%] max-sm:ml-[5%]",
@@ -46,6 +47,7 @@ function Header() {
     
     const navigate = useNavigate();
 	const [state, dispatch] = useReducer(reducer, initState);
+    const [navbar, setNavbar] = useState<boolean>(false);
     const [headerTitle, setHeaderTitle] = useState<string>("my_portfolio");
 
 	// tailwind styles
@@ -73,6 +75,10 @@ function Header() {
     const handleExperienceClick = () => {
         document.getElementById("experience-page")?.scrollIntoView();
 		window.scrollBy(0, -50);
+    }
+
+    const toggleNavbar = () => {
+        setNavbar(prev => !prev);
     }
 
     const { pathname } = useLocation();
@@ -128,10 +134,16 @@ function Header() {
 					</a>
 				</div>
 			</div>
-			<img
-				src={MenuIcon}
-				className={`h-10 duration-500 ${state.right} hidden max-lg:inline`}
-			></img>
+            {
+                navbar ?
+                <Navbar toggleNavbar={toggleNavbar} handleProjectClick={handleProjectClick} handleSkillsClick={handleSkillsClick} handleExperienceClick={handleExperienceClick} /> :
+                <img
+                    src={MenuIcon}
+                    className={`h-10 duration-500 ${state.right} hidden max-lg:inline`}
+                    onClick={toggleNavbar}
+			    ></img>
+            }
+			
 		</div>
 	);
 }
