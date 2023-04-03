@@ -23,7 +23,7 @@ const ProjectList: React.FC<ProjectListProps> = (props) => {
             <p className="text-2xl mb-24 mt-2 max-sm:text-sm max-sm:mb-16">You can find all of my projects on my github. The link is in the top-right corner of the page.</p>
             <div className="grid grid-cols-3 gap-12 max-2xl:grid-cols-2 max-lg:grid-cols-1 max-sm:gap-6">
                 {props.projects.map((project) => (
-                    <ProjectListItem project={project}/>
+                    <ProjectListItem project={project} key={project.id}/>
                 ))}
                 {/* white spaces to make the grid fuill */}
                 {props.projects.length % 3 === 2 && (

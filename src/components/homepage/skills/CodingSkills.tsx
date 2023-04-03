@@ -1,6 +1,5 @@
 import React from "react";
-import { getTsBuildInfoEmitOutputFilePath } from "typescript";
-import CodeIcon from "../../../pic/skillsicons/codeIcon.svg";
+import { uuidv4 } from "@firebase/util";
 
 const skillsData = [
 	{
@@ -38,7 +37,7 @@ const skillsData = [
 function getStuff(num: number, style: string) {
 	let res = [];
 	for (let i = 0; i < num; i++) {
-		res.push(<div className={style}></div>);
+		res.push(<div className={style} key={uuidv4()}></div>);
 	}
 	return res;
 }
@@ -51,7 +50,7 @@ function CodingSkills() {
 		>
 			<div className="flex flex-col gap-6 max-sm:gap-3">
 				{skillsData.map((skill) => (
-					<div>
+					<div key={uuidv4()}>
 						<h2
 							className={`opacity-1 mb-2 pl-6 text-xl font-terminal font-semibold drop-shadow-lg ${skill.textStyle} max-sm:text-sm`}
 						>

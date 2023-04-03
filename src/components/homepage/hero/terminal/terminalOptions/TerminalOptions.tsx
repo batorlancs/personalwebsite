@@ -1,5 +1,5 @@
+import { uuidv4 } from "@firebase/util";
 import React from "react";
-
 
 const TerminalOptions = () => {
 
@@ -33,18 +33,18 @@ const TerminalOptions = () => {
 		<div className="max-xl:hidden">
             <div className='flex flex-row justify-start items-start max-xl:hidden py-2'>
                 <p className='text-xl pr-1 pt-[3px]'>👨🏼‍💼</p>
-                <p className='pt-[4px] bg-transparent border-none text-neutral-400 text-s w-full'>
+                <div className='pt-[4px] bg-transparent border-none text-neutral-400 text-s w-full'>
                     {terminalMessages.map((terminalMessage) => (
-                        <p className={terminalMessage.highlighted ? "text-emerald-500" : ""}>
+                        <p className={terminalMessage.highlighted ? "text-emerald-500" : ""} key={uuidv4()}>
                             {terminalMessage.message}
                         </p>
                     ))}
                     {terminalOptions.map((terminalOption) => (
-                        <p className=" text-red-400">
+                        <p className=" text-red-400" key={uuidv4()}>
                             {terminalOption}
                         </p>
                     ))}
-                </p>
+                </div>
             </div>
 			<hr className="my-3 ml-3 w-full border-t-2 border-dashed opacity-30" />
 		</div>

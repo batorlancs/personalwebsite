@@ -25,7 +25,7 @@ const ArticleList: React.FC<ArticleListProps> = (props) => {
             <div className="grid grid-cols-4 gap-12 max-2xl:grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 max-sm:gap-6">
                 {props.articles.length > 0 && <ArticleListItem article={props.articles[0]} isFirstItem={true}/>}
                 {props.articles.length > 0 && props.articles.slice(1, props.articles.length).map((article) => (
-                    <ArticleListItem article={article} isFirstItem={false}/>
+                    <ArticleListItem article={article} isFirstItem={false} key={article.id}/>
                 ))}
             </div>
 		</div>

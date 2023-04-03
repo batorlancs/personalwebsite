@@ -4,6 +4,7 @@ import "aos/dist/aos.css";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../firebase";
 import { useNavigate } from "react-router-dom";
+import ProjectCardV2 from "./ProjectCardV2";
 
 type ProjectData = {
 	id: string;
@@ -61,9 +62,9 @@ function Project() {
 			</div>
 			{projects.length > 0 &&
 				projects
-					.slice(0, 2)
+					.slice(0, 3)
 					.map((project) => (
-						<ProjectCard data={project} key={project.id} />
+						<ProjectCardV2 data={project} key={project.id} />
 					))}
 		</div>
 	);

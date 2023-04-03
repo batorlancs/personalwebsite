@@ -5,7 +5,13 @@ function ScrollToTop() {
     const { pathname } = useLocation();
 
     useEffect(() => {
-        window.scrollTo(0, 0);
+        if (pathname === "/home/projects-page") {
+            document.getElementById("projects-page")?.scrollIntoView();
+		    window.scrollBy(0, -50);
+        } else {
+            window.scrollTo(0, 0);
+        }
+        
     }, [pathname]);
 
     return null;

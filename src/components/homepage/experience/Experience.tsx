@@ -18,14 +18,12 @@ function Experience() {
 				<h1 className="text-4xl font-bold max-lg:text-3xl max-md:text-2xl max-sm:text-xl">
 					My Experience
 				</h1>
-				<button
+				<a
 					className="text-2xl text-stone-500 max-md:text-xl max-sm:text-lg"
-					onClick={() => {
-						navigate("/projects");
-					}}
+					href="https://www.linkedin.com/in/gergely-bator/"
 				>
 					See On LinkedIn
-				</button>
+				</a>
 			</div>
         </div>
     )

@@ -1,6 +1,7 @@
 import React from "react";
 import "aos/dist/aos.css";
-import GitHubIcon from "../../../pic/sociallogos/github.png";
+import Atropos from "atropos/react";
+import "atropos/css";
 
 type ProjectCardProps = {
 	data: {
@@ -14,16 +15,36 @@ type ProjectCardProps = {
 	key: string;
 };
 
-const ProjectCard: React.FC<ProjectCardProps> = (props) => {
+const ProjectCardV2: React.FC<ProjectCardProps> = (props) => {
+
 	return (
 		<div
 			data-aos="fade-up"
 			className="relative mt-24 flex min-h-[400px] flex-row items-center gap-20
             max-xl:gap-10 max-md:mt-10 max-md:flex-col max-md:rounded-3xl max-md:bg-white max-md:bg-opacity-20 max-md:shadow-xl max-sm:mt-5 max-sm:min-h-0 max-sm:gap-5"
 		>
-			<div className="h-full min-w-[500px] max-2xl:min-w-[400px] max-xl:min-w-[300px] max-lg:min-w-[200px] max-md:w-full">
+            <div className="h-[500px] w-[500px] bg-white rounded-3xl bg-opacity-20 shadow-xl flex items-center justify-center max-2xl:w-[400px] max-xl:w-[300px] max-lg:hidden">
+                <Atropos
+                    className="my-atropos"
+                    shadow={false}
+                    highlight={false}
+                >
+                    <div className="h-[500px] w-[500px] flex items-center justify-center p-16 max-2xl:w-[400px] max-xl:w-[300px] max-xl:p-12">
+                        <img
+                            src={props.data.pic}
+                            className="mb-20 max-h-[300px] max-w-full shadow-2xl"
+                            alt="project-preview"
+                            data-atropos-offset="10"
+                        ></img>
+                    </div>
+                </Atropos >
+                <p
+                    className="absolute font-terminal text-xl mt-[430px]"
+                >hover on me</p>
+            </div>
+            <div className="h-full min-w-[200px] max-md:w-full lg:hidden">
 				<div
-					className="relative h-[400px] w-full max-w-[500px] overflow-hidden rounded-3xl bg-black shadow-lg max-2xl:min-w-[400px] max-xl:min-w-[300px] max-lg:min-w-[200px]
+					className="relative h-[400px] w-full max-w-[500px] overflow-hidden rounded-3xl bg-black shadow-lg min-w-[200px]
                 max-md:h-[200px] max-md:max-w-none max-md:rounded-b-none max-md:shadow-none max-sm:h-[100px]"
 				>
 					<img
@@ -57,4 +78,4 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
 	);
 };
 
-export default ProjectCard;
+export default ProjectCardV2;

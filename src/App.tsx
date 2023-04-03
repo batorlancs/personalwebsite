@@ -66,9 +66,6 @@ function App() {
         document.body.style.backgroundColor = "#000";
 	}, []);
 
-    console.log(projects);
-    console.log(articles);
-
 	return (
 		<BrowserRouter>
             <ScrollToTop />

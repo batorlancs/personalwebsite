@@ -48,6 +48,7 @@ function Header() {
     const navigate = useNavigate();
 	const [state, dispatch] = useReducer(reducer, initState);
     const [navbar, setNavbar] = useState<boolean>(false);
+    const [isAtHome, setIsAtHome] = useState<boolean>(false);
     const [headerTitle, setHeaderTitle] = useState<string>("my_portfolio");
 
 	// tailwind styles
@@ -63,8 +64,8 @@ function Header() {
 	});
 
 	const handleProjectClick = () => {
-		document.getElementById("projects-page")?.scrollIntoView();
-		window.scrollBy(0, -50);
+        document.getElementById("projects-page")?.scrollIntoView();
+        window.scrollBy(0, -50);
 	};
 
     const handleSkillsClick = () => {
@@ -77,6 +78,14 @@ function Header() {
 		window.scrollBy(0, -50);
     }
 
+    const handleArticlesClick = () => {
+        navigate("/articles");
+    }
+
+    const handleProjectsClick = () => {
+        navigate("/projects");
+    }
+
     const toggleNavbar = () => {
         setNavbar(prev => !prev);
     }
@@ -84,8 +93,14 @@ function Header() {
     const { pathname } = useLocation();
 
     useEffect(() => {
-        if (pathname === "/") setHeaderTitle("my_portfolio");
-        else setHeaderTitle("go_back_home");
+        if (pathname === "/") {
+            setHeaderTitle("my_portfolio");
+            setIsAtHome(true);
+        }
+        else {
+            setHeaderTitle("go_back_home");
+            setIsAtHome(false);
+        }
     }, [pathname]);
 
 
@@ -101,15 +116,28 @@ function Header() {
 			<div
 				className={`flex h-full w-[25%] flex-row items-center justify-end gap-16 duration-500 ${state.right} max-2xl:gap-10 max-lg:hidden`}
 			>
-				<button className={buttonStyle} onClick={handleProjectClick}>
-					projects
-				</button>
-				<button className={buttonStyle} onClick={handleSkillsClick}>
-                    skills
-                </button>
-				<button className={buttonStyle} onClick={handleExperienceClick}>
-                    experience
-                </button>
+                { isAtHome ?
+                    <>
+                        <button className={buttonStyle} onClick={handleProjectClick}>
+                            projects
+                        </button>
+                        <button className={buttonStyle} onClick={handleSkillsClick}>
+                            skills
+                        </button>
+                        <button className={buttonStyle} onClick={handleExperienceClick}>
+                            experience
+                        </button>
+                    </>
+                :
+                    <>
+                        <button className={buttonStyle} onClick={handleArticlesClick}>
+                            articles
+                        </button>
+                        <button className={buttonStyle} onClick={handleProjectsClick}>
+                            projects
+                        </button>
+                    </>
+                }
 				<div className="flex flex-row gap-5">
 					<a
 						href="https://www.linkedin.com/in/gergely-bator/"
@@ -136,7 +164,15 @@ function Header() {
 			</div>
             {
                 navbar ?
-                <Navbar toggleNavbar={toggleNavbar} handleProjectClick={handleProjectClick} handleSkillsClick={handleSkillsClick} handleExperienceClick={handleExperienceClick} /> :
+                <Navbar
+                    toggleNavbar={toggleNavbar}
+                    handleProjectClick={handleProjectClick}
+                    handleSkillsClick={handleSkillsClick}
+                    handleExperienceClick={handleExperienceClick}
+                    handleProjectsClick={handleProjectsClick}
+                    handleArticlesClick={handleArticlesClick}
+                    isAtHome={isAtHome}
+                /> :
                 <img
                     src={MenuIcon}
                     className={`h-10 duration-500 ${state.right} hidden max-lg:inline`}

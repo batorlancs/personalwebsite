@@ -20,14 +20,12 @@ function Skills() {
 				<h1 className="text-4xl font-bold max-lg:text-3xl max-md:text-2xl max-sm:text-xl">
 					My Skills
 				</h1>
-				<button
+				<a
 					className="text-2xl text-stone-500 max-md:text-xl max-sm:text-lg"
-					onClick={() => {
-						navigate("/projects");
-					}}
+					href="https://www.linkedin.com/in/gergely-bator/details/skills/"
 				>
 					See On LinkedIn
-				</button>
+				</a>
 			</div>
 
 			<div className="mt-24 flex min-h-[400px] flex-row items-center justify-between gap-20 max-xl:flex-col max-md:mt-16 max-sm:mt-5 max-sm:gap-5">

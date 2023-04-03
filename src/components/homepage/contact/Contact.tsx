@@ -61,11 +61,11 @@ function Contact() {
             user_email: state.email,
             message: state.message
         }, "9_NI2V_0kP0kR4mjz").then((response) => {
-            console.log("SUCCESS!", response.status, response.text);
+            // console.log("SUCCESS!", response.status, response.text);
 		    dispatch({ type: FORM_ACTION.SUCCESS, value: "" });
             setLoadingAnim(false);
         }, (error) => {
-            console.log("FAILED...", error);
+            // console.log("FAILED...", error);
             setErrorMsg("something went wrong..");
             setLoadingAnim(false);
         });

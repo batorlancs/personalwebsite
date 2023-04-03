@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { uuidv4 } from "@firebase/util";
 import { calcTimeDifference, calcArticleColor } from "../../functions";
 
 type ArticleData = {
@@ -18,10 +20,14 @@ const itemFormatIfNotFirst = "max-sm:min-h-0";
 
 const ArticleListItem: React.FC<ArticleData> = (props) => {
 
-    const [currColor, setCurrColor] = useState<string>(calcArticleColor(props.article.tags));
+    const currColor = calcArticleColor(props.article.tags);
+    const navigate = useNavigate();
 
 	return (
-		<div className={`${props.isFirstItem ? itemFormatIfFirst : itemFormatIfNotFirst} flex min-h-[300px] cursor-pointer flex-col justify-between rounded-3xl bg-white bg-opacity-20 p-8 shadow-xl duration-500 hover:bg-opacity-50 max-sm:p-4`}>
+		<div
+            className={`${props.isFirstItem ? itemFormatIfFirst : itemFormatIfNotFirst} flex min-h-[300px] cursor-pointer flex-col justify-between rounded-3xl bg-white bg-opacity-20 p-8 shadow-xl duration-500 hover:bg-opacity-50 max-sm:p-4`}
+            onClick={() => {navigate(`/article/${props.article.id}`)}}
+        >
 			<div>
                 <div className="flex w-full flex-row items-center justify-between">
                     <div className={`h-3 w-9 rounded-full bg-opacity-50 ${currColor}`}></div>
@@ -37,7 +43,7 @@ const ArticleListItem: React.FC<ArticleData> = (props) => {
             { props.isFirstItem &&
                 <div className="flex flex-row gap-6 font-terminal text-neutral-500 text-lg max-sm:text-base max-sm:gap-4">
                 {props.article.tags.map((articleTag) => (
-                    <div>
+                    <div key={uuidv4()}>
                         #{articleTag}
                     </div>
                 ))}
