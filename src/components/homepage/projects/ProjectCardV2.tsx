@@ -23,23 +23,23 @@ const ProjectCardV2: React.FC<ProjectCardProps> = (props) => {
 			className="relative mt-24 flex min-h-[400px] flex-row items-center gap-20
             max-xl:gap-10 max-md:mt-10 max-md:flex-col max-md:rounded-3xl max-md:bg-white max-md:bg-opacity-20 max-md:shadow-xl max-sm:mt-5 max-sm:min-h-0 max-sm:gap-5"
 		>
-            <div className="h-[500px] w-[500px] bg-white rounded-3xl bg-opacity-20 shadow-xl flex items-center justify-center max-2xl:w-[400px] max-xl:w-[300px] max-lg:hidden">
+            <div className="h-[500px] w-[500px] bg-white rounded-3xl bg-opacity-20 shadow-xl flex items-center justify-center max-2xl:h-[400px] max-2xl:w-[400px] max-xl:w-[300px] max-lg:hidden">
                 <Atropos
                     className="my-atropos"
                     shadow={false}
                     highlight={false}
                 >
-                    <div className="h-[500px] w-[500px] flex items-center justify-center p-16 max-2xl:w-[400px] max-xl:w-[300px] max-xl:p-12">
+                    <div className="h-[500px] w-[500px] flex items-center justify-center p-16 max-2xl:w-[400px] max-2xl:h-[400px] max-xl:w-[300px] max-xl:p-12">
                         <img
                             src={props.data.pic}
-                            className="mb-20 max-h-[300px] max-w-full shadow-2xl"
+                            className="mb-20 max-h-[260px] max-2xl:max-h-[240px] max-w-full shadow-2xl"
                             alt="project-preview"
                             data-atropos-offset="10"
                         ></img>
                     </div>
                 </Atropos >
                 <p
-                    className="absolute font-terminal text-xl mt-[430px]"
+                    className="absolute font-terminal text-xl mt-[430px] max-2xl:mt-[330px]"
                 >hover on me</p>
             </div>
             <div className="h-full min-w-[200px] max-md:w-full lg:hidden">
