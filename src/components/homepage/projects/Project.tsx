@@ -14,6 +14,7 @@ type ProjectData = {
 	pic: string;
 	github: string;
 	time: number;
+    pics: Array<string>;
 };
 
 function Project() {

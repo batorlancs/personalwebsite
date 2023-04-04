@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "aos/dist/aos.css";
 import Atropos from "atropos/react";
 import "atropos/css";
+import ArrowIcon from "../../../pic/arrow-right.svg";
 
 type ProjectCardProps = {
 	data: {
@@ -11,11 +12,36 @@ type ProjectCardProps = {
 		tech: string;
 		pic: string;
 		github: string;
+        time: number;
+        pics: Array<string>;
 	};
 	key: string;
 };
 
 const ProjectCardV2: React.FC<ProjectCardProps> = (props) => {
+
+    const [currPic, setCurrPic] = useState<number>(0);
+    const [isFullScreen, setIsFullScreen] = useState<boolean>(false);
+
+    const handlePicClick = (num: number) => {
+        if (num === 1) {
+            if (currPic + 1 >= props.data.pics.length) {
+                setCurrPic(0);
+            } else {
+                setCurrPic(prev => prev + 1);
+            }
+        } else {
+            if (currPic - 1 < 0) {
+                setCurrPic(props.data.pics.length - 1);
+            } else {
+                setCurrPic(prev => prev - 1);
+            }
+        }
+    }
+
+    const toggleFullScreen = () => {
+        setIsFullScreen(prev => !prev);
+    }
 
 	return (
 		<div
@@ -32,16 +58,30 @@ const ProjectCardV2: React.FC<ProjectCardProps> = (props) => {
                 >
                     <div className="h-[500px] w-[500px] flex items-center justify-center p-16 max-2xl:w-[400px] max-2xl:h-[400px] max-xl:w-[300px] max-xl:p-12">
                         <img
-                            src={props.data.pic}
+                            src={props.data.pics[currPic]}
                             className="mb-20 max-h-[260px] max-2xl:max-h-[240px] max-w-full shadow-2xl"
                             alt="project-preview"
                             data-atropos-offset="10"
                         ></img>
+                        <div
+                            className="absolute h-12 mt-[400px] flex flex-row items-center justify-between gap-5"
+                            data-atropos-offset="-10"
+                        >
+                            <img src={ArrowIcon} className="rotate-180 h-full cursor-pointer" onClick={() => { handlePicClick(1) }}></img>
+                            <img src={ArrowIcon} className="h-full cursor-pointer" onClick={() => { handlePicClick(-1) }}></img>
+                        </div>
+                        
                     </div>
+                    
                 </Atropos >
-                <p
-                    className="absolute font-terminal text-xl mt-[430px] max-2xl:mt-[330px]"
-                >hover on me</p>
+                <img
+                    className="z-50 absolute h-12 w-12 mt-[400px] ml-[400px] cursor-pointer"
+                    src={ArrowIcon}
+                    onClick={toggleFullScreen}
+                    data-atropos-offset="-10"
+                >
+
+                </img>
             </div>
             {/* for under large dimensions */}
             <div className="h-full min-w-[200px] max-md:w-full lg:hidden">
