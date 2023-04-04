@@ -8,9 +8,10 @@ type ProjectListItemProps = {
 		title: string;
 		desc: string;
 		tech: string;
-		pic: string;
 		github: string;
 		time: number;
+        pics: Array<string>;
+        website: string;
 	};
 }
 
@@ -23,7 +24,7 @@ const ProjectListItem: React.FC<ProjectListItemProps> = (props) => {
 		>
 			<div className="relative h-[200px] min-w-[100px] overflow-hidden rounded-t-2xl bg-white max-lg:h-[100px]">
 				<img
-					src={props.project.pic}
+					src={props.project.pics[0]}
 					className="absolute top-0 left-0 min-h-full min-w-full object-cover"
 					alt="project-preview"
 				></img>

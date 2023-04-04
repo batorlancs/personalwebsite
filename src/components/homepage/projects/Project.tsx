@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import ProjectCard from "./ProjectCard";
 import "aos/dist/aos.css";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../firebase";
@@ -11,10 +10,10 @@ type ProjectData = {
 	title: string;
 	desc: string;
 	tech: string;
-	pic: string;
 	github: string;
 	time: number;
     pics: Array<string>;
+    website: string;
 };
 
 function Project() {

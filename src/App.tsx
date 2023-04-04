@@ -15,9 +15,10 @@ type ProjectData = {
 	title: string;
 	desc: string;
 	tech: string;
-	pic: string;
 	github: string;
 	time: number;
+    pics: Array<string>;
+    website: string;
 };
 
 type ArticleData = {
@@ -63,7 +64,7 @@ function App() {
 	useEffect(() => {
 		getProjects();
 		getArticles();
-        document.body.style.backgroundColor = "#000";
+        // document.body.style.backgroundColor = "#000";
 	}, []);
 
 	return (

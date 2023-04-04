@@ -735,6 +735,15 @@ video {
 .min-h-\[400px\]{
   min-height: 400px;
 }
+.min-h-\[\]{
+  min-height: ;
+}
+.min-h-\[200px\]{
+  min-height: 200px;
+}
+.min-h-\[250px\]{
+  min-height: 250px;
+}
 .w-full{
   width: 100%;
 }
@@ -1129,6 +1138,9 @@ video {
 .pb-12{
   padding-bottom: 3rem;
 }
+.pb-5{
+  padding-bottom: 1.25rem;
+}
 .font-terminal{
   font-family: PT Mono;
 }
@@ -1432,6 +1444,10 @@ video {
     margin-top: 330px;
   }
 
+  .max-2xl\:mt-\[300px\]{
+    margin-top: 300px;
+  }
+
   .max-2xl\:hidden{
     display: none;
   }
@@ -1489,6 +1505,13 @@ video {
   .max-2xl\:text-4xl{
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+
+  @media not all and (min-width: 1280px){
+
+    .max-2xl\:max-xl\:hidden{
+      display: none;
+    }
   }
 }
 @media not all and (min-width: 1280px){

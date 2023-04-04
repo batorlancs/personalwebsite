@@ -7,9 +7,10 @@ type ProjectListProps = {
 		title: string;
 		desc: string;
 		tech: string;
-		pic: string;
 		github: string;
 		time: number;
+        pics: Array<string>;
+        website: string;
 	}[];
 };
 

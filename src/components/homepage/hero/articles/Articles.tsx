@@ -40,8 +40,8 @@ function Articles() {
 
 	return (
 		<div className="pt-56 max-xl:pt-32 max-md:pt-56 max-sm:pt-32">
-			<div className="min-h-72 relative flex h-72 flex-row items-center justify-between gap-20 max-xl:h-auto max-xl:flex-col max-xl:gap-20 max-md:gap-10 max-sm:gap-5">
-				<div className="flex h-full max-w-[500px] flex-col items-start justify-center max-2xl:max-w-[400px] max-xl:hidden">
+			<div className="min-h-72 relative flex flex-row items-center justify-between gap-20 max-xl:h-auto max-xl:flex-col max-xl:gap-20 max-md:gap-10 max-sm:gap-5">
+				<div className="flex min-h-full min-w-[500px] max-w-[500px] flex-col items-start justify-center max-2xl:min-w-[400px] max-2xl:max-w-[400px] max-xl:hidden">
 					<h2 className="text-4xl font-bold tracking-tight">
 						My Coding Journey
 					</h2>
@@ -77,10 +77,10 @@ function Articles() {
 					</button>
 				</div>
 
-				<div className="flex h-72 flex-row gap-20 max-2xl:gap-10 max-md:h-auto max-md:flex-col max-sm:gap-5">
+				<div className="flex min-h-[300px] flex-row gap-20 max-2xl:gap-10 max-md:h-auto max-md:flex-col max-sm:gap-5">
 					{articles.slice(0, 2).map((article) => (
 						<Link
-                            className="h-full w-full rounded-3xl bg-white bg-opacity-20 p-6 shadow-lg backdrop-blur-xl cursor-pointer hover:bg-opacity-50"
+                            className="min-h-full w-full rounded-3xl bg-white bg-opacity-20 p-6 shadow-lg backdrop-blur-xl cursor-pointer hover:bg-opacity-50"
                             data-aos="fade-up"
                             key={article.title}
                             to={`/article/${article.id}`}
@@ -94,7 +94,7 @@ function Articles() {
 							<h3 className="mt-5 text-2xl font-bold max-sm:mt-2 max-sm:text-xl">
 								{article.title}
 							</h3>
-							<p className="mt-2 pb-10 text-xl max-sm:mt-0 max-sm:pb-4 max-sm:text-lg">
+							<p className="mt-2 pb-2 text-xl max-sm:mt-0 max-sm:pb-4 max-sm:text-lg">
 								{article.desc}
 							</p>
 						</Link>
