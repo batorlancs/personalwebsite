@@ -23,6 +23,7 @@ const ProjectCardV2: React.FC<ProjectCardProps> = (props) => {
 			className="relative mt-24 flex min-h-[400px] flex-row items-center gap-20
             max-xl:gap-10 max-md:mt-10 max-md:flex-col max-md:rounded-3xl max-md:bg-white max-md:bg-opacity-20 max-md:shadow-xl max-sm:mt-5 max-sm:min-h-0 max-sm:gap-5"
 		>
+            {/* for normal dimensions */}
             <div className="h-[500px] w-[500px] bg-white rounded-3xl bg-opacity-20 shadow-xl flex items-center justify-center max-2xl:h-[400px] max-2xl:w-[400px] max-xl:w-[300px] max-lg:hidden">
                 <Atropos
                     className="my-atropos"
@@ -42,6 +43,7 @@ const ProjectCardV2: React.FC<ProjectCardProps> = (props) => {
                     className="absolute font-terminal text-xl mt-[430px] max-2xl:mt-[330px]"
                 >hover on me</p>
             </div>
+            {/* for under large dimensions */}
             <div className="h-full min-w-[200px] max-md:w-full lg:hidden">
 				<div
 					className="relative h-[400px] w-full max-w-[500px] overflow-hidden rounded-3xl bg-black shadow-lg min-w-[200px]
@@ -54,6 +56,7 @@ const ProjectCardV2: React.FC<ProjectCardProps> = (props) => {
 					></img>
 				</div>
 			</div>
+            
 			<div className="flex h-full w-full flex-col items-start pr-12 max-md:px-6 max-md:pb-5">
 				<h4 className="mb-2 text-2xl font-terminal text-emerald-600 max-2xl:text-xl max-sm:mb-2 max-sm:text-sm">
 					{props.data.tech}

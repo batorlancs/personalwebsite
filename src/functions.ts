@@ -39,6 +39,11 @@ export async function query(params = {}) {
       body: JSON.stringify(params_)
     };
     const response = await fetch('https://api.openai.com/v1/completions', requestOptions);
+
+    if (!response.ok) {
+        return "api currently unavailable"
+    }
+
     const data = await response.json();
     
     return data.choices[0].text;

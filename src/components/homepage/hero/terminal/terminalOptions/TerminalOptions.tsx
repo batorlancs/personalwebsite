@@ -26,7 +26,7 @@ const TerminalOptions = () => {
     const terminalOptions = [
         "> tell me about your projects",
         "> do you have relevant tech experience",
-        "> do you have pets?"
+        "> do you have any pets"
     ]
 
 	return (

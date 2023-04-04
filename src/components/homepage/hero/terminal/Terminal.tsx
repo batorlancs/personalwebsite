@@ -5,6 +5,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './Terminal.css';
 import { query } from "../../../../functions";
+import { uuidv4 } from '@firebase/util';
 import LoadingAnimation from "../../../../pic/loadingAnimation.svg";
 import personalinfo from "./personalinfo";
 
@@ -19,6 +20,7 @@ function Terminal() {
     const [dialog, setDialog] = useState<DialogPart[]>([]);
     const [inputPlaceHolder, setInputPlaceHolder] = useState<string>("ask here");
     const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [isAvailable, setIsAvailable] = useState<boolean>(true);
 
     const inputRef = useRef<HTMLInputElement>(null);
     const terminalContentRef = useRef<HTMLInputElement>(null);
@@ -33,10 +35,10 @@ function Terminal() {
     }, [dialog, isLoading])
 
     const getData = async () => {
-        const response = query({"prompt": personalinfo + message + "?"})
+        query({"prompt": personalinfo + message + "?"})
         .then((res) => {
-            console.log(isLoading);
             pushToDialog(res);
+            if (res === "api currently unavailable") setIsAvailable(false);
             setIsLoading(false);
         });
     }
@@ -73,7 +75,7 @@ function Terminal() {
             <div ref={terminalContentRef} className='p-5 pr-12 h-[500px] scrollbar scrollbar-track-neutral-700 scrollbar-thumb-emerald-500'>
                 <TerminalOptions />
                 {dialog.map((dialogPart) => (
-                    <div>
+                    <div key={uuidv4()}>
                         <div className='flex flex-row justify-start items-start max-xl:hidden'>
                             <img src={ArrowRight} className='invert h-8' alt="arrow-right-icon"></img>
                             <p className='pt-[4px] bg-transparent border-none text-emerald-400 text-s w-full placeholder:text-yellow-200 placeholder:opacity-50 focus:outline-none'>
@@ -89,6 +91,7 @@ function Terminal() {
 			            <hr className="my-3 ml-3 w-full border-t-2 border-dashed opacity-30 max-xl:hidden" />
                     </div>
                 ))}
+                { isAvailable &&
                 <form onSubmit={handleSubmit} className='flex flex-row justify-start items-start max-xl:hidden'>
                     <img src={ArrowRight} className='invert h-8' alt="arrow-right-icon"></img>
                     <input className='pt-[4px] bg-transparent border-none text-yellow-200 text-s w-full placeholder:text-yellow-200 placeholder:opacity-50 focus:outline-none'
@@ -101,7 +104,7 @@ function Terminal() {
                         onChange={((event) => {setMessage(event.target.value)})}>
                     </input>
                     <input type="submit" className='hidden'/>
-                </form>
+                </form>}
                 {isLoading
                 ?
                 <div className='flex flex-row justify-start items-start max-xl:hidden py-2'>
