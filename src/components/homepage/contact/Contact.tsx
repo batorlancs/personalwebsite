@@ -80,6 +80,7 @@ function Contact() {
 			id="contact-page"
 			className="relative mt-4 max-w-[2000px] px-[10%] pb-28 max-sm:px-[5%] max-sm:pb-16"
 		>
+
 			<div className="flex flex-row items-center justify-between rounded-3xl">
 				<div className="mr-20 min-w-[500px] pr-10 max-2xl:min-w-[400px] max-xl:w-full max-xl:min-w-0 max-lg:hidden">
 					<h1 className="text-7xl font-bold tracking-tighter">
