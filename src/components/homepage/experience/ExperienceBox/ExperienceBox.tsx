@@ -36,14 +36,11 @@ const ExperienceBox: React.FC<ExperienceBoxProps> = (props) => {
                 <h3 className="text-xl text-neutral-400 italic max-2xl:text-lg max-sm:text-base">{location}</h3>
                 <div className="lg:hidden mt-5">
                     <h1 className="text-xl font-terminal font-bold max-sm:text-lg">Tasks:</h1>
-                    <div className="text-lg max-sm:text-base">
+                    <ul className="text-lg max-sm:text-base list-disc">
                         {props.experience.tasks.map((task) => (
-                            <div className="flex flex-row gap-5">
-                                <div className="h-2 w-2 bg-black rounded-full mt-[12px] max-sm:mt-[8px]"></div>
-                                <p>{task}</p>
-                            </div>
+                            <li className="ml-5">{task}</li>
                         ))}
-                    </div>
+                    </ul>
                     <h1 className="text-xl font-terminal font-bold mt-5 max-sm:text-lg">Gained Knowledge:</h1>
                     <p className="text-lg mb-10 max-sm:text-base">
                         {props.experience.learned}

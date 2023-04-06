@@ -651,6 +651,12 @@ video {
 .mt-\[11px\]{
   margin-top: 11px;
 }
+.ml-5{
+  margin-left: 1.25rem;
+}
+.ml-8{
+  margin-left: 2rem;
+}
 .flex{
   display: flex;
 }
@@ -842,6 +848,9 @@ video {
 }
 .resize-none{
   resize: none;
+}
+.list-disc{
+  list-style-type: disc;
 }
 .grid-cols-4{
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1636,6 +1645,11 @@ video {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
+
+  .max-xl\:text-lg{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
 }
 @media not all and (min-width: 1024px){
 
@@ -2013,6 +2027,14 @@ video {
 
   .max-sm\:gap-3{
     gap: 0.75rem;
+  }
+
+  .max-sm\:gap-1{
+    gap: 0.25rem;
+  }
+
+  .max-sm\:gap-0{
+    gap: 0px;
   }
 
   .max-sm\:rounded-3xl{
