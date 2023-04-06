@@ -9,7 +9,11 @@ type ExperienceContentProps = {
 
 const ExperienceContent: React.FC<ExperienceContentProps> = (props) => {
 	return (
-        <div className="w-full max-lg:hidden">
+        <div
+            className="w-full max-lg:hidden"
+            data-aos="fade-up"
+            data-aos-delay="100"
+        >
             <h1 className="text-3xl font-terminal font-bold mb-5">Tasks:</h1>
             <div className="text-2xl">
                 {props.experience.tasks.map((task) => (

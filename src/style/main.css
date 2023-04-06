@@ -1919,6 +1919,14 @@ video {
     margin-top: 8px;
   }
 
+  .max-sm\:mb-10{
+    margin-bottom: 2.5rem;
+  }
+
+  .max-sm\:mb-12{
+    margin-bottom: 3rem;
+  }
+
   .max-sm\:flex{
     display: flex;
   }

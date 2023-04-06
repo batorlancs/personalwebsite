@@ -44,9 +44,13 @@ function Experience() {
     return (
         <div
             id="experience-page"
-            className="relative mb-24 w-full max-w-[2000px] px-[10%] max-sm:px-[5%] max-sm:mb-5"
+            className="relative mb-24 w-full max-w-[2000px] px-[10%] max-sm:px-[5%] max-sm:mb-16"
         >
-            <PageHeader title="My Experience" buttonTitle="See On LinkedIn" buttonLink="https://www.linkedin.com/in/gergely-bator/"/>
+            <PageHeader
+                title="My Experience"
+                buttonTitle="See on LinkedIn"
+                buttonLink="https://www.linkedin.com/in/gergely-bator/"
+            />
             <div className="flex flex-row h-[500px] mt-24 items-center justify-between gap-20 max-lg:h-auto max-md:mt-10 max-sm:mt-5">
                 { experiences.length > 0 &&
                     <>
