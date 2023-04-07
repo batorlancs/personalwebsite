@@ -103,15 +103,18 @@ function Contact() {
 	return (
 		<div
 			id="contact-page"
-			className="relative max-w-[2000px] px-[10%] pb-28 max-sm:px-[5%] max-sm:pb-16"
+			className="relative max-w-[2000px] px-[10%] pb-28 max-sm:px-[5%] max-sm:pb-16 overflow-hidden"
 		>
+            <div className="absolute h-full w-full top-[100px] left-0 -z-40 bg-[url('../pic/waves4.png')] bg-cover bg-no-repeat opacity-80 blur-3xl max-2xl:top-[200px]"></div>
 			<PageHeader
 				title="Contact"
 				buttonTitle="Message on LinkedIn"
 				buttonLink="https://www.linkedin.com/in/gergely-bator/"
-				fade="fade-down"
 			/>
-			<div className="mt-24 flex flex-row items-center justify-between rounded-3xl max-md:mt-10 max-sm:mt-5">
+			<div
+                className="mt-24 flex flex-row items-center justify-between rounded-3xl max-md:mt-10 max-sm:mt-5"
+                data-aos="fade-up"
+            >
 				<div className="mr-20 min-w-[500px] pr-10 max-2xl:min-w-[400px] max-xl:w-full max-xl:min-w-0 max-lg:hidden">
 					<h1 className="text-7xl font-bold tracking-tighter">
 						Let's chat.
@@ -132,7 +135,11 @@ function Contact() {
 					</div>
 				</div>
 
-				<div className="h-[700px] w-full min-w-[400px] rounded-3xl bg-white bg-opacity-30 p-20 shadow-xl backdrop-blur-xl max-xl:h-auto max-xl:min-w-0 max-xl:p-12 max-sm:p-6 max-sm:pt-12 ">
+				<div
+                    className="h-[700px] w-full min-w-[400px] rounded-3xl bg-white bg-opacity-30 p-20 shadow-xl backdrop-blur-xl max-xl:h-auto max-xl:min-w-0 max-xl:p-12 max-sm:p-6 max-sm:pt-12 "
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                >
 					<h2 className="mb-6 text-4xl font-semibold max-xl:text-3xl max-sm:text-2xl">
 						Send a Message! 📫
 					</h2>

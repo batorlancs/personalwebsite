@@ -15,6 +15,7 @@ type ProjectData = {
 	time: number;
 	pics: Array<string>;
 	website: string;
+    highlighted?: boolean;
 };
 
 function Project() {
@@ -53,6 +54,9 @@ function Project() {
 			/>
 			{projects.length > 0 &&
 				projects
+                    .filter((project) => {
+                        return project.highlighted;
+                    })
 					.slice(0, 3)
 					.map((project) => (
 						<ProjectCardV2 data={project} key={project.id} />

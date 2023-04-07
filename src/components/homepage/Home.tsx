@@ -14,8 +14,10 @@ function Home() {
 	}, []);
 
 	return (
-		<div className="relative flex flex-col items-center bg-[url('../pic/waves6.png')] bg-cover bg-no-repeat font-body">
-			<div className="absolute z-0 h-full w-full bg-gray-200 bg-opacity-40"></div>
+		// <div className="relative flex flex-col items-center bg-[url('../pic/waves6.png')] bg-cover bg-no-repeat font-body">
+		<div className="relative flex flex-col items-center font-body">
+            <div className="absolute -z-50 h-full w-full top-0 left-0 bg-[url('../pic/waves6.png')] bg-cover bg-no-repeat"></div>
+			<div className="absolute z-0 h-full w-full top-0 left-0 bg-gray-200 bg-opacity-40"></div>
 			<Hero />
 			<Project />
             <Skills />

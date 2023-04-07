@@ -504,6 +504,9 @@ video {
 .left-5{
   left: 1.25rem;
 }
+.top-\[100px\]{
+  top: 100px;
+}
 .z-10{
   z-index: 10;
 }
@@ -512,6 +515,21 @@ video {
 }
 .z-0{
   z-index: 0;
+}
+.-z-50{
+  z-index: -50;
+}
+.-z-10{
+  z-index: -10;
+}
+.-z-0{
+  z-index: 0;
+}
+.-z-20{
+  z-index: -20;
+}
+.-z-40{
+  z-index: -40;
 }
 .col-start-1{
   grid-column-start: 1;
@@ -1084,8 +1102,23 @@ video {
 .bg-opacity-80{
   --tw-bg-opacity: 0.8;
 }
+.bg-opacity-10{
+  --tw-bg-opacity: 0.1;
+}
 .bg-\[url\(\'\.\.\/pic\/waves6\.png\'\)\]{
   background-image: url('../pic/waves6.png');
+}
+.bg-\[url\(\'\.\.\/pic\/waves2\.png\'\)\]{
+  background-image: url('../pic/waves2.png');
+}
+.bg-\[url\(\'\.\.\/pic\/waves3\.png\'\)\]{
+  background-image: url('../pic/waves3.png');
+}
+.bg-\[url\(\'\.\.\/pic\/waves4\.png\'\)\]{
+  background-image: url('../pic/waves4.png');
+}
+.bg-\[url\(\'\.\.\/pic\/waves5\.png\'\)\]{
+  background-image: url('../pic/waves5.png');
 }
 .bg-cover{
   background-size: cover;
@@ -1113,6 +1146,9 @@ video {
 }
 .p-16{
   padding: 4rem;
+}
+.p-4{
+  padding: 1rem;
 }
 .px-\[10\%\]{
   padding-left: 10%;
@@ -1245,6 +1281,10 @@ video {
   font-size: 6rem;
   line-height: 1;
 }
+.text-sm{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
 .font-semibold{
   font-weight: 600;
 }
@@ -1361,6 +1401,15 @@ video {
 .opacity-20{
   opacity: 0.2;
 }
+.opacity-60{
+  opacity: 0.6;
+}
+.opacity-100{
+  opacity: 1;
+}
+.opacity-80{
+  opacity: 0.8;
+}
 .shadow-xl{
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
@@ -1381,12 +1430,27 @@ video {
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+.blur-xl{
+  --tw-blur: blur(24px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.blur-sm{
+  --tw-blur: blur(4px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.blur-3xl{
+  --tw-blur: blur(64px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
 .drop-shadow-lg{
   --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 .invert{
   --tw-invert: invert(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.filter{
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 .backdrop-blur-xl{
@@ -1511,6 +1575,18 @@ video {
   opacity: 0.8;
 }
 @media not all and (min-width: 1536px){
+
+  .max-2xl\:top-10{
+    top: 2.5rem;
+  }
+
+  .max-2xl\:top-\[300px\]{
+    top: 300px;
+  }
+
+  .max-2xl\:top-\[200px\]{
+    top: 200px;
+  }
 
   .max-2xl\:mt-0{
     margin-top: 0px;
@@ -1762,6 +1838,11 @@ video {
     font-size: 1.875rem;
     line-height: 2.25rem;
   }
+
+  .max-lg\:text-base{
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
 @media not all and (min-width: 768px){
 
@@ -1999,8 +2080,16 @@ video {
     width: 0.5rem;
   }
 
+  .max-sm\:w-full{
+    width: 100%;
+  }
+
   .max-sm\:min-w-0{
     min-width: 0px;
+  }
+
+  .max-sm\:min-w-full{
+    min-width: 100%;
   }
 
   .max-sm\:grid-cols-1{
@@ -2180,6 +2269,18 @@ video {
 
   .max-sm\:hover\:border-0:hover{
     border-width: 0px;
+  }
+}
+@media (min-width: 640px){
+
+  .sm\:hidden{
+    display: none;
+  }
+}
+@media (min-width: 768px){
+
+  .md\:hidden{
+    display: none;
   }
 }
 @media (min-width: 1024px){

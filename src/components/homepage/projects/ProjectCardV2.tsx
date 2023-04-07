@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import "aos/dist/aos.css";
 import ProjectCardPic from "./ProjectCardElements/ProjectCardPic";
-import ProjectCardContent from "./ProjectCardElements/ProjectCardContent";
+import ProjectCardContent from "./ProjectCardElements/ProjectCardContent/ProjectCardContent";
 
 type ProjectCardProps = {
 	data: {

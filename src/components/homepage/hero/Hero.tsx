@@ -64,6 +64,7 @@ function Hero() {
 
 	function handleContactClick() {
 		document.getElementById("contact-page")?.scrollIntoView();
+		window.scrollBy(0, -50);
 	}
 
 	return (
