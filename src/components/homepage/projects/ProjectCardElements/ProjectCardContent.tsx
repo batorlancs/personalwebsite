@@ -26,7 +26,7 @@ const ProjectCardContent: React.FC<ProjectCardContentProps> = (props) => {
             </p>
             <div className="flex flex-row gap-5">
                 <a
-                    className="flex h-14 items-center justify-between rounded-full bg-black shadow-xl hover:gap-5
+                    className="flex h-14 items-center justify-between rounded-full bg-black shadow-xl hover:bg-opacity-80
                     max-2xl:h-12 max-md:text-sm max-md:mt-5 max-sm:h-10"
                     href={props.data.github}
                     target="_blank"
@@ -35,7 +35,7 @@ const ProjectCardContent: React.FC<ProjectCardContentProps> = (props) => {
                 </a>
                 { props.data.website !== "" &&
                 <a
-                    className="flex h-14 items-center justify-between rounded-full bg-black shadow-xl hover:gap-5
+                    className="flex h-14 items-center justify-between rounded-full bg-black shadow-xl hover:bg-opacity-80
                     max-2xl:h-12 max-md:text-sm max-md:mt-5 max-sm:h-10"
                     href={props.data.website}
                     target="_blank"

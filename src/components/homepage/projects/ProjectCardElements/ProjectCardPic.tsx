@@ -31,27 +31,37 @@ const ProjectCardPic: React.FC<ProjectCardPicProps> = (props) => {
         <>
         {/* for normal dimensions */}
         <div className="h-[500px] w-[500px] bg-white rounded-3xl bg-opacity-20 shadow-xl flex items-center justify-center max-2xl:h-[400px] max-2xl:w-[400px] max-xl:w-[300px] max-lg:hidden">
-        <Atropos
-            className="my-atropos"
-            shadow={false}
-            highlight={false}
-        >
-            <div className="h-[500px] w-[500px] flex items-center justify-center p-16 max-2xl:w-[400px] max-2xl:h-[400px] max-xl:w-[300px] max-xl:p-12">
-                <img
-                    src={props.pics[currPic]}
-                    className="mb-20 max-h-[260px] max-2xl:max-h-[240px] max-w-full shadow-2xl"
-                    alt="project-preview"
-                    data-atropos-offset="10"
-                ></img>
+            <Atropos
+                className="my-atropos"
+                shadow={false}
+                highlight={false}
+            >
+                <div className="h-[500px] w-[500px] flex items-center justify-center p-16 max-2xl:w-[400px] max-2xl:h-[400px] max-xl:w-[300px] max-xl:p-12">
+                    <img
+                        src={props.pics[currPic]}
+                        className="mb-20 max-h-[260px] max-2xl:max-h-[240px] max-w-full shadow-2xl"
+                        alt="project-preview"
+                        data-atropos-offset="10"
+                    ></img>
+                </div>
+            </Atropos >
+            <div
+                className="absolute bg-black bg-opacity-5 rounded-2xl z-50 h-12 mt-[400px] flex flex-row items-center justify-between max-2xl:mt-[300px]"
+                data-atropos-offset="-10"
+            >
                 <div
-                    className="absolute h-12 mt-[400px] flex flex-row items-center justify-between gap-5 max-2xl:mt-[300px]"
-                    data-atropos-offset="-10"
+                    className="cursor-pointer px-6 rounded-l-2xl hover:bg-black hover:bg-opacity-5"
+                    onClick={() => { handlePicClick(1) }}
                 >
-                    <img src={ArrowIcon} className="rotate-180 h-full cursor-pointer" onClick={() => { handlePicClick(1) }}></img>
-                    <img src={ArrowIcon} className="h-full cursor-pointer" onClick={() => { handlePicClick(-1) }}></img>
+                    <img src={ArrowIcon} className="rotate-180 h-full select-none"></img>
+                </div>
+                <div
+                    className="cursor-pointer px-6 rounded-r-2xl hover:bg-black hover:bg-opacity-5"
+                    onClick={() => { handlePicClick(-1) }}
+                >
+                    <img src={ArrowIcon} className="h-full cursor-pointer select-none"></img>
                 </div>
             </div>
-            </Atropos >
         </div>
         {/* for under large dimensions */}
         <div className="h-full min-w-[200px] max-md:w-full lg:hidden">

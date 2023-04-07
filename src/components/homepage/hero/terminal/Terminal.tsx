@@ -38,7 +38,7 @@ function Terminal() {
         query({"prompt": personalinfo + message + "?"})
         .then((res) => {
             pushToDialog(res);
-            if (res === "api currently unavailable") setIsAvailable(false);
+            if (res === "API currently unavailable") setIsAvailable(false);
             setIsLoading(false);
         });
     }
@@ -46,6 +46,10 @@ function Terminal() {
     const handleSubmit = (e:any) => {
         e.preventDefault();
         if (isLoading === true || message === "") return;
+        if (dialog.length > 10) {
+            pushToDialog("Sorry, you have reached the maximum amount of questions.");
+            setIsAvailable(false);
+        }
         setIsLoading(true);
         getData();
         if (inputPlaceHolder === "ask here") setInputPlaceHolder("ask more");

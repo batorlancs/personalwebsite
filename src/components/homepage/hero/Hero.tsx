@@ -136,11 +136,11 @@ function Hero() {
 							></img>
 						</button>
 						<img
-							className={`ml-6 h-44 rotate-[62deg] -scale-x-100 delay-1000 duration-[4000ms] ${curveAnim} max-2xl:hidden`}
+							className={`ml-6 h-44 rotate-[62deg] -scale-x-100 delay-1000 select-none duration-[4000ms] ${curveAnim} max-2xl:hidden`}
 							src={ArrowCurvy}
                             alt="curvy-arrow-icon"
 						></img>
-						<p className={`ml-12 mt-16 whitespace-nowrap font-cursive text-2xl delay-1000 duration-[4000ms] ${curveAnim} max-2xl:mt-0 max-2xl:ml-6 max-2xl:text-xl max-sm:hidden`}>
+						<p className={`ml-12 mt-16 whitespace-nowrap font-cursive text-2xl select-none delay-1000 duration-[4000ms] ${curveAnim} max-2xl:mt-0 max-2xl:ml-6 max-2xl:text-xl max-sm:hidden`}>
 							copy email
 							<br /> to clipboard
 						</p>

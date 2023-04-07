@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from "react";
+import React, { useReducer, useState, useRef } from "react";
 import Mail from "../../../pic/mailbox.svg";
 import Check from "../../../pic/check.svg";
 import emailjs from "emailjs-com";
@@ -39,10 +39,13 @@ const reducer = (
 
 function Contact() {
 
-    const [loadingAnim, setLoadingAnim] = useState<boolean>(false);
+	const [loadingAnim, setLoadingAnim] = useState<boolean>(false);
+    const nameInput = useRef(null);
+    const emailInput = useRef(null);
+    const messageTextArea = useRef(null);
 
 	function handleSubmit() {
-        if (state.success) return;
+		if (state.success) return;
 
 		if (state.name === "" || state.email === "" || state.message === "") {
 			setErrorMsg("Please fill out all forms");
@@ -54,23 +57,44 @@ function Contact() {
 			return;
 		}
 
-        setErrorMsg("");
-        setLoadingAnim(true);
+		setErrorMsg("");
+		setLoadingAnim(true);
 
-        emailjs.send("service_bgk8uir", "template_k2rubuo", {
-            user_name: state.name,
-            user_email: state.email,
-            message: state.message
-        }, "9_NI2V_0kP0kR4mjz").then((response) => {
-            // console.log("SUCCESS!", response.status, response.text);
-		    dispatch({ type: FORM_ACTION.SUCCESS, value: "" });
-            setLoadingAnim(false);
-        }, (error) => {
-            // console.log("FAILED...", error);
-            setErrorMsg("something went wrong..");
-            setLoadingAnim(false);
-        });
-
+		emailjs
+			.send(
+				"service_bgk8uir",
+				"template_k2rubuo",
+				{
+					user_name: state.name,
+					user_email: state.email,
+					message: state.message,
+				},
+				"9_NI2V_0kP0kR4mjz"
+			)
+			.then(
+				(response) => {
+					// console.log("SUCCESS!", response.status, response.text);
+					dispatch({ type: FORM_ACTION.SUCCESS, value: "" });
+                    dispatch({
+                        type: FORM_ACTION.SET_NAME,
+                        value: "",
+                    });
+                    dispatch({
+                        type: FORM_ACTION.SET_EMAIL,
+                        value: "",
+                    });
+                    dispatch({
+                        type: FORM_ACTION.SET_MESSAGE,
+                        value: "",
+                    });
+					setLoadingAnim(false);
+				},
+				(error) => {
+					// console.log("FAILED...", error);
+					setErrorMsg("something went wrong..");
+					setLoadingAnim(false);
+				}
+			);
 	}
 
 	const [state, dispatch] = useReducer(reducer, initState);
@@ -81,7 +105,12 @@ function Contact() {
 			id="contact-page"
 			className="relative max-w-[2000px] px-[10%] pb-28 max-sm:px-[5%] max-sm:pb-16"
 		>
-            <PageHeader title="Contact" buttonTitle="Message on LinkedIn" buttonLink="" fade="fade-down"/>
+			<PageHeader
+				title="Contact"
+				buttonTitle="Message on LinkedIn"
+				buttonLink="https://www.linkedin.com/in/gergely-bator/"
+				fade="fade-down"
+			/>
 			<div className="mt-24 flex flex-row items-center justify-between rounded-3xl max-md:mt-10 max-sm:mt-5">
 				<div className="mr-20 min-w-[500px] pr-10 max-2xl:min-w-[400px] max-xl:w-full max-xl:min-w-0 max-lg:hidden">
 					<h1 className="text-7xl font-bold tracking-tighter">
@@ -90,7 +119,11 @@ function Contact() {
 					<p className="text-2xl">Let's create something together!</p>
 					<div className="mt-24 flex flex-row items-center justify-start">
 						<div className="mr-4 flex h-20 w-20 items-center justify-center rounded-full bg-white bg-opacity-30 shadow-lg">
-							<img src={Mail} className="opacity-30" alt="mail-icon"></img>
+							<img
+								src={Mail}
+								className="opacity-30"
+								alt="mail-icon"
+							></img>
 						</div>
 						<div>
 							<p className="text-xl font-bold">Mail me at:</p>
@@ -105,8 +138,10 @@ function Contact() {
 					</h2>
 
 					<input
+                        value={state.name}
 						className="mb-6 w-full rounded-xl bg-black bg-opacity-5 py-4 px-8 text-xl placeholder:text-neutral-400 max-sm:px-5 max-sm:text-lg"
 						type="text"
+                        ref={nameInput}
 						placeholder="Your Full Name"
 						onChange={(event) => {
 							dispatch({
@@ -117,8 +152,10 @@ function Contact() {
 					></input>
 
 					<input
+                        value={state.email}
 						className="mb-6 w-full rounded-xl bg-black bg-opacity-5 py-4 px-8 text-xl placeholder:text-neutral-400 max-sm:px-5 max-sm:text-lg"
 						type="email"
+                        ref={emailInput}
 						placeholder="Your Email Address"
 						onChange={(event) => {
 							dispatch({
@@ -129,7 +166,9 @@ function Contact() {
 					></input>
 
 					<textarea
+                        value={state.message}
 						className="h-[200px] w-full resize-none rounded-xl bg-black bg-opacity-5 py-4 px-8 text-xl placeholder:text-neutral-400 max-sm:px-5 max-sm:text-lg"
+                        ref={messageTextArea}
 						placeholder="Message"
 						onChange={(event) => {
 							dispatch({
@@ -145,21 +184,24 @@ function Contact() {
 						</p>
 					)}
 
-                    { loadingAnim ?
-                    <img src={LoadingIcon} className="h-12 mt-5"></img> :
-                    <button
-						onClick={handleSubmit}
-						className="mt-5 mb-5 rounded-full bg-black px-12 py-4 text-xl tracking-widest text-white max-sm:py-2 max-sm:px-10 max-sm:text-lg"
-					>
-						{state.success ? (
-							<img className="h-6 invert" src={Check} alt="check-icon"></img>
-						) : (
-							<p>Submit</p>
-						)}
-					</button>
-                    }
-					
-                    
+					{loadingAnim ? (
+						<img src={LoadingIcon} className="mt-5 h-12"></img>
+					) : (
+						<button
+							onClick={handleSubmit}
+							className="mt-5 mb-5 rounded-full bg-black px-12 py-4 text-xl tracking-widest text-white max-sm:py-2 max-sm:px-10 max-sm:text-lg"
+						>
+							{state.success ? (
+								<img
+									className="h-6 invert"
+									src={Check}
+									alt="check-icon"
+								></img>
+							) : (
+								<p>Submit</p>
+							)}
+						</button>
+					)}
 				</div>
 			</div>
 		</div>

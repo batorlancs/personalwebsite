@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ExperienceBoxChooser from "./ExperienceBoxChooser";
+import { uuidv4 } from "@firebase/util";
 
 type ExperienceBoxProps = {
     experience: {
@@ -38,7 +39,7 @@ const ExperienceBox: React.FC<ExperienceBoxProps> = (props) => {
                     <h1 className="text-xl font-terminal font-bold max-sm:text-lg">Tasks:</h1>
                     <ul className="text-lg max-sm:text-base list-disc">
                         {props.experience.tasks.map((task) => (
-                            <li className="ml-5">{task}</li>
+                            <li className="ml-5" key={uuidv4()}>{task}</li>
                         ))}
                     </ul>
                     <h1 className="text-xl font-terminal font-bold mt-5 max-sm:text-lg">Gained Knowledge:</h1>

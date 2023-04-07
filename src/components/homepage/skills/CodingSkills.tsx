@@ -3,7 +3,7 @@ import { uuidv4 } from "@firebase/util";
 
 const skillsData = [
 	{
-		name: "JavaScript",
+		name: "JavaScript (React)",
 		strength: 8,
 		style: "bg-neutral-500",
 		textStyle: "text-neutral-600",
@@ -15,7 +15,7 @@ const skillsData = [
 		textStyle: "text-emerald-600",
 	},
 	{
-		name: "TypeScript",
+		name: "TypeScript (React)",
 		strength: 6,
 		style: "bg-blue-400",
 		textStyle: "text-blue-500",
@@ -52,7 +52,7 @@ function CodingSkills() {
 				{skillsData.map((skill) => (
 					<div key={uuidv4()}>
 						<h2
-							className={`opacity-1 mb-2 pl-6 text-xl font-terminal font-semibold drop-shadow-lg ${skill.textStyle} max-sm:text-sm`}
+							className={`opacity-1 mb-2 pl-6 text-xl font-semibold drop-shadow-lg ${skill.textStyle} max-sm:text-sm`}
 						>
 							{skill.name}
 						</h2>

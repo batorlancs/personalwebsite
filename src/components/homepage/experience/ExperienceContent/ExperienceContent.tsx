@@ -1,4 +1,5 @@
 import React from "react";
+import { uuidv4 } from "@firebase/util";
 
 type ExperienceContentProps = {
     experience: {
@@ -17,7 +18,7 @@ const ExperienceContent: React.FC<ExperienceContentProps> = (props) => {
             <h1 className="text-4xl font-bold mb-2 max-2xl:text-3xl max-xl:text-2xl">Tasks:</h1>
             <ul className="text-2xl list-disc max-2xl:text-xl max-xl:text-lg">
                 {props.experience.tasks.map((task) => (
-                    <li className="ml-6">{task}</li>
+                    <li className="ml-6" key={uuidv4()}>{task}</li>
                 ))}
             </ul>
             <h1 className="text-4xl font-bold mt-12 mb-2 max-2xl:text-3xl max-xl:text-2xl">Gained Knowledge:</h1>

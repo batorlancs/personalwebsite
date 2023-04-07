@@ -10,7 +10,7 @@ type PageHeaderProps = {
 
 const PageHeader: React.FC<PageHeaderProps> = (props) => {
 
-    const linkButtonStyle = "text-2xl text-stone-500 max-md:text-xl max-sm:text-lg";
+    const linkButtonStyle = "text-2xl text-stone-500 max-md:text-xl max-sm:text-lg hover:text-black";
 
 	return (
         <div

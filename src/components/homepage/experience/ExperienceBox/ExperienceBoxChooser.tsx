@@ -14,7 +14,7 @@ const ExperienceBoxChooser: React.FC<ExperienceBoxChooserProps> = (props) => {
         <div className="w-full bg-black bg-opacity-5 rounded-2xl h-16 flex flex-col items-center justify-center">
             <div className="flex flex-row">
                 {Array.from({ length: props.length}).map((_, index) => (
-                    <div className="flex flex-row items-center">
+                    <div className="flex flex-row items-center" key={index}>
                         <div 
                             className={props.current === index ? highlightedCircleStyle : circleStyle }
                             onClick={() => { props.setCurrent(index); }}

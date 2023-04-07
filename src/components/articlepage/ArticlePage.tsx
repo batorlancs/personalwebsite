@@ -43,9 +43,9 @@ function ArticlePage() {
 	}, []);
 
 	return (
-        <div className="bg-gray-100 flex justify-center items-start px-[10%] max-sm:px-[5%]">
+        <div className="bg-neutral-200 flex justify-center items-start px-[10%] max-sm:px-[5%]">
             {articleData == null ?
-            <div className="bg-gray-100 z-10 fixed top-0 bottom-0 left-0 right-0 flex items-center justify-center">
+            <div className="bg-neutral-200 z-10 fixed top-0 bottom-0 left-0 right-0 flex items-center justify-center">
                 <img src={LoadingGif} className="h-24 opacity-30"></img>
             </div>
             :
