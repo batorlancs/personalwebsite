@@ -7,7 +7,7 @@ type ContentButtonsNormalProps = {
 
 const ContentButtonsNormal: React.FC<ContentButtonsNormalProps> = (props) => {
 	return (
-        <div className="flex flex-row gap-5 max-sm:gap-2 max-sm:w-full bg-black bg-opacity-5 max-md:hidden">
+        <div className="flex flex-row gap-5 max-sm:gap-2 max-sm:w-full max-md:hidden ">
             <a
                 className="flex h-14 items-center justify-between rounded-full bg-black shadow-xl hover:bg-opacity-80
                 max-2xl:h-12 max-md:text-sm max-md:mt-5 max-sm:h-10 max-sm:w-full"

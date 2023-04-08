@@ -32,9 +32,9 @@ const ExperienceBox: React.FC<ExperienceBoxProps> = (props) => {
             <div className="h-full flex flex-col items-start justify-center">
                 <h1 className="text-4xl font-bold font-terminal max-2xl:text-3xl max-xl:text-2xl max-sm:text-xl">{title}</h1>
                 <h2 className="text-3xl mt-2 max-2xl:text-2xl max-xl:text-xl max-sm:text-lg">at {company}</h2>
-                <h3 className="text-xl mt-5 italic max-2xl:text-lg max-sm:text-base">{type}</h3>
-                <h3 className="text-xl  italic max-2xl:text-lg max-sm:text-base">{date_from} - {date_to}</h3>
-                <h3 className="text-xl text-neutral-400 italic max-2xl:text-lg max-sm:text-base">{location}</h3>
+                <h3 className="text-xl mt-5 text-neutral-500 italic max-2xl:text-lg max-sm:text-base">{type}</h3>
+                <h3 className="text-xl text-neutral-500 italic max-2xl:text-lg max-sm:text-base">{date_from} - {date_to}</h3>
+                <h3 className="text-xl text-neutral-500 italic max-2xl:text-lg max-sm:text-base">{location}</h3>
                 <div className="lg:hidden mt-5">
                     <h1 className="text-xl font-terminal font-bold max-sm:text-lg">Tasks:</h1>
                     <ul className="text-lg max-sm:text-base list-disc">

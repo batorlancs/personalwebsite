@@ -2,16 +2,22 @@ import React, { useState } from "react";
 import Atropos from "atropos/react";
 import "atropos/css";
 import ArrowIcon from "../../../../pic/arrow-right.svg";
+import LoadingAnimation from "../../../../pic/loadingAnimation.svg";
 
 type ProjectCardPicProps = {
     pics: Array<string>;
 }
 
+const jpgimagestyle = "mb-20 max-h-[260px] max-2xl:max-h-[240px] max-w-full shadow-2xl";
+const pngimagestyle = "mb-20 max-h-[260px] max-2xl:max-h-[240px] max-w-full";
+
 const ProjectCardPic: React.FC<ProjectCardPicProps> = (props) => {
 
     const [currPic, setCurrPic] = useState<number>(0);
+    const [isPicLoading, setIsPicLoading] = useState<boolean>(false);
 
     const handlePicClick = (num: number) => {
+        handlePicLoading(true);
         if (num === 1) {
             if (currPic + 1 >= props.pics.length) {
                 setCurrPic(0);
@@ -25,6 +31,13 @@ const ProjectCardPic: React.FC<ProjectCardPicProps> = (props) => {
                 setCurrPic(prev => prev - 1);
             }
         }
+        setTimeout(() => {
+            handlePicLoading(false);
+        }, 100); 
+    }
+
+    const handlePicLoading = (x: boolean) => {
+        setIsPicLoading(x);
     }
 
 	return (
@@ -37,12 +50,13 @@ const ProjectCardPic: React.FC<ProjectCardPicProps> = (props) => {
                 highlight={false}
             >
                 <div className="h-[500px] w-[500px] flex items-center justify-center p-16 max-2xl:w-[400px] max-2xl:h-[400px] max-xl:w-[300px] max-xl:p-12">
+                    { !isPicLoading &&
                     <img
                         src={props.pics[currPic]}
-                        className="mb-20 max-h-[260px] max-2xl:max-h-[240px] max-w-full shadow-2xl"
+                        className={props.pics[currPic].includes(".png") ? pngimagestyle : jpgimagestyle}
                         alt="project-preview"
                         data-atropos-offset="10"
-                    ></img>
+                    ></img>}
                 </div>
             </Atropos >
             <div
@@ -51,13 +65,13 @@ const ProjectCardPic: React.FC<ProjectCardPicProps> = (props) => {
             >
                 <div
                     className="cursor-pointer px-6 rounded-l-2xl hover:bg-black hover:bg-opacity-5"
-                    onClick={() => { handlePicClick(1) }}
+                    onClick={() => { handlePicClick(-1); }}
                 >
                     <img src={ArrowIcon} className="rotate-180 h-full select-none"></img>
                 </div>
                 <div
                     className="cursor-pointer px-6 rounded-r-2xl hover:bg-black hover:bg-opacity-5"
-                    onClick={() => { handlePicClick(-1) }}
+                    onClick={() => { handlePicClick(1); }}
                 >
                     <img src={ArrowIcon} className="h-full cursor-pointer select-none"></img>
                 </div>

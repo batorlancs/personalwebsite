@@ -3,7 +3,7 @@ import { uuidv4 } from "@firebase/util";
 
 const skillsData = [
 	{
-		name: "JavaScript (React)",
+		name: "JavaScript/Typescript (React)",
 		strength: 8,
 		style: "bg-neutral-500",
 		textStyle: "text-neutral-600",
@@ -15,7 +15,7 @@ const skillsData = [
 		textStyle: "text-emerald-600",
 	},
 	{
-		name: "TypeScript (React)",
+		name: "SQL",
 		strength: 6,
 		style: "bg-blue-400",
 		textStyle: "text-blue-500",

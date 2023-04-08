@@ -16,6 +16,7 @@ type ProjectCardProps = {
 	};
 };
 
+
 const ProjectCardV2: React.FC<ProjectCardProps> = (props) => {
 	return (
 		<div
