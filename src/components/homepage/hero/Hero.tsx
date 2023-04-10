@@ -100,7 +100,7 @@ function Hero() {
             {/* <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/patterns10.svg')] top-0 left-0 opacity-30"></div> */}
 			<div className="justify-left flex items-start rounded-3xl">
 				<Terminal />
-				<div className="pt-12">
+				<div className="pt-12 max-2xl:pt-8">
 					<div
 						className="flex items-center"
 						data-aos="fade-up"
@@ -115,7 +115,7 @@ function Hero() {
 					</div>
 
 					<h1
-						className="mt-6 mb-10 text-8xl font-bold tracking-tighter text-black max-2xl:text-7xl max-sm:mb-6 max-sm:text-5xl"
+						className="mt-6 mb-10 text-8xl font-bold tracking-tighter text-black max-2xl:text-7xl max-2xl:mb-8 max-sm:mb-6 max-sm:text-5xl"
 						data-aos="fade-up"
 						data-aos-duration="2000"
 						data-aos-delay="200"
@@ -135,7 +135,7 @@ function Hero() {
 					</h2>
 
 					<div
-						className="mt-16 flex flex-row items-start max-sm:mt-10"
+						className="mt-16 flex flex-row items-start max-2xl:mt-10 max-sm:mt-10"
 						data-aos="fade-up"
 						data-aos-duration="2000"
 						data-aos-delay="800"

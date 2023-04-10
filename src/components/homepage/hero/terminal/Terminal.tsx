@@ -98,7 +98,7 @@ function Terminal() {
 
     return (
         <div className='terminal mr-20 min-w-[500px] max-w-[500px] rounded-3xl overflow-hidden bg-black bg-opacity-80 duration-500 backdrop-blur-xl cursor-text font-terminal
-            max-2xl:min-w-[400px] max-2xl:max-w-[400px] max-xl:min-w-[200px] max-lg:min-w-[115px] max-lg:mr-12 max-md:hidden'
+            max-2xl:min-w-[400px] max-2xl:max-w-[400px] max-2xl:h-[460px] max-xl:min-w-[200px] max-lg:min-w-[115px] max-lg:mr-12 max-md:hidden'
             onClick={() => {setFocusOnTerminalCommand()}}>
             <div className='pl-8 w-full h-10 rounded-t-3xl bg-black bg-opacity-1 flex flex-row gap-x-2 items-center justify-start duration-500'>
                 {/* <div className='h-3 w-3 bg-green-500 rounded-full'></div> */}
