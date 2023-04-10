@@ -50,7 +50,8 @@ function Articles() {
 						plans for the future.
 					</p>
 					<button
-                        className="articlebutton mt-10 flex h-14 flex-row items-center justify-start text-2xl tracking-wider text-emerald-600 duration-500"
+                        // className="articlebutton mt-10 flex h-14 flex-row items-center justify-start text-2xl tracking-wider text-emerald-600 duration-500"
+                        className="articlebutton mt-10 flex h-14 flex-row items-center justify-start text-2xl tracking-wider text-sky-600 duration-500"
                         onClick={() => {navigate("/articles")}}
                     >
 						<img

@@ -51,5 +51,6 @@ export async function query(params = {}) {
 
 export const calcArticleColor = (list: Array<string>):string => {
     if (list.includes("devlog")) return "bg-red-600";
-    return "bg-emerald-600";
+    // return "bg-emerald-600";
+    return "bg-sky-600";
 }

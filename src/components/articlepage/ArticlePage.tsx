@@ -58,13 +58,13 @@ function ArticlePage() {
                     ))}
                 </div>
                 <h1 className="mt-5 text-5xl font-terminal font-bold max-lg:text-4xl max-sm:text-3xl">{articleData.title}</h1>
-                <h2 className="mt-5 mb-12 text-2xl font-bold text-emerald-600 max-lg:text-xl max-sm:text-lg">{articleData.desc}</h2>
+                <h2 className="mt-5 mb-12 text-2xl font-bold text-sky-600 max-lg:text-xl max-sm:text-lg">{articleData.desc}</h2>
                 {articleData.content.map((paragraph) => (
                     <p className="mt-12 text-2xl max-lg:text-xl max-sm:text-lg max-sm:mt-8" key={uuidv4()}>
                         {paragraph}
                     </p>
                 ))}
-                <div className="mt-24 font-terminal text-2xl text-emerald-600 max-lg:text-xl max-sm:text-lg max-sm:mt-12">
+                <div className="mt-24 font-terminal text-2xl text-sky-600 max-lg:text-xl max-sm:text-lg max-sm:mt-12">
                     <Link
                         className="flex flex-row items-center gap-4 duration-500 hover:gap-6 max-sm:gap-2"
                         to="/"

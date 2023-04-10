@@ -65,7 +65,7 @@ function Header() {
 
 	const handleProjectClick = () => {
         document.getElementById("projects-page")?.scrollIntoView();
-        window.scrollBy(0, -50);
+        window.scrollBy(0, 80);
 	};
 
     const handleSkillsClick = () => {

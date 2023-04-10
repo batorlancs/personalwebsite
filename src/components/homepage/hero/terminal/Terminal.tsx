@@ -72,7 +72,8 @@ function Terminal() {
             max-2xl:min-w-[400px] max-2xl:max-w-[400px] max-xl:min-w-[200px] max-lg:min-w-[115px] max-lg:mr-12 max-md:hidden'
             onClick={() => {setFocusOnTerminalCommand()}}>
             <div className='pl-8 w-full h-10 rounded-t-3xl bg-black bg-opacity-1 flex flex-row gap-x-2 items-center justify-start duration-500'>
-                <div className='h-3 w-3 bg-green-500 rounded-full'></div>
+                {/* <div className='h-3 w-3 bg-green-500 rounded-full'></div> */}
+                <div className='h-3 w-3 bg-sky-400 rounded-full'></div>
                 <div className='h-3 w-3 bg-red-500 rounded-full'></div>
                 <div className='h-3 w-3 bg-yellow-300 rounded-full'></div>
             </div>
@@ -82,7 +83,8 @@ function Terminal() {
                     <div key={uuidv4()}>
                         <div className='flex flex-row justify-start items-start max-xl:hidden'>
                             <img src={ArrowRight} className='invert h-8' alt="arrow-right-icon"></img>
-                            <p className='pt-[4px] bg-transparent border-none text-emerald-400 text-s w-full placeholder:text-yellow-200 placeholder:opacity-50 focus:outline-none'>
+                            {/* <p className='pt-[4px] bg-transparent border-none text-emerald-400 text-s w-full placeholder:text-yellow-200 placeholder:opacity-50 focus:outline-none'> */}
+                            <p className='pt-[4px] bg-transparent border-none text-sky-400 text-s w-full placeholder:text-yellow-200 placeholder:opacity-50 focus:outline-none'>
                                 {dialogPart.question}
                             </p>
                         </div>

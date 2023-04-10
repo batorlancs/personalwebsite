@@ -26,11 +26,11 @@ const ExperienceBox: React.FC<ExperienceBoxProps> = (props) => {
 	return (
         <div
             className="h-full min-w-[500px] max-w-[500px] bg-white bg-opacity-20 rounded-3xl shadow-xl p-12 flex flex-col
-            max-2xl:min-w-[400px] max-2xl:max-w-[400px] max-xl:min-w-[300px] max-xl:max-w-[300px] max-lg:w-full max-lg:max-w-full max-sm:p-6"
+            max-2xl:min-w-[400px] max-2xl:max-w-[400px] max-xl:p-8 max-xl:min-w-[300px] max-xl:max-w-[300px] max-lg:w-full max-lg:max-w-full max-sm:p-6"
             data-aos="fade-up"
         >
             <div className="h-full flex flex-col items-start justify-center">
-                <h1 className="text-4xl font-bold font-terminal max-2xl:text-3xl max-xl:text-2xl max-sm:text-xl">{title}</h1>
+                <h1 className="text-4xl font-bold pr-5 max-2xl:pr-0 max-2xl:text-3xl max-xl:text-2xl max-sm:text-xl">{title}</h1>
                 <h2 className="text-3xl mt-2 max-2xl:text-2xl max-xl:text-xl max-sm:text-lg">at {company}</h2>
                 <h3 className="text-xl mt-5 text-neutral-500 italic max-2xl:text-lg max-sm:text-base">{type}</h3>
                 <h3 className="text-xl text-neutral-500 italic max-2xl:text-lg max-sm:text-base">{date_from} - {date_to}</h3>

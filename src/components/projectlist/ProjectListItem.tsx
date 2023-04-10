@@ -34,7 +34,8 @@ const ProjectListItem: React.FC<ProjectListItemProps> = (props) => {
                 </div>
 			</div>
 			<div className="p-8 pb-16 max-sm:p-4 max-sm:pb-8">
-				<p className="mb-2 font-terminal text-lg text-emerald-700 max-sm:text-sm max-sm:mb-0">
+				{/* <p className="mb-2 font-terminal text-lg text-emerald-700 max-sm:text-sm max-sm:mb-0"> */}
+				<p className="mb-2 font-terminal text-lg text-sky-600 max-sm:text-sm max-sm:mb-0">
 					{props.project.tech}
 				</p>
 				<h1 className="mb-4 text-3xl font-bold max-sm:text-xl max-sm:mb-1">

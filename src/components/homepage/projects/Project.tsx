@@ -43,7 +43,7 @@ function Project() {
 	return (
 		<div
 			id="projects-page"
-			className="mt-24 mb-24 w-full max-w-[2000px] px-[10%] max-sm:mt-12 max-sm:mb-16 max-sm:px-[5%] "
+			className="pt-48 pb-48 mb-24 w-full max-w-[2000px] px-[10%] max-sm:mt-0 max-sm:pt-10 max-sm:mb-0 max-sm:px-[5%] max-sm:pb-16 bg-black bg-opacity-5 max-sm:bg-opacity-0"
 		>
 			<PageHeader
 				title="My Latest Projects"

@@ -14,7 +14,7 @@ const PageHeader: React.FC<PageHeaderProps> = (props) => {
 
 	return (
         <div
-            className="flex flex-row items-center justify-between overflow-hidden rounded-3xl bg-white bg-opacity-20 py-6 px-12 shadow-lg backdrop-blur-xl
+            className="flex flex-row items-center justify-between overflow-hidden rounded-3xl bg-white bg-opacity-20 py-6 px-12 shadow-lg backdrop-blur-xl max-lg:px-8
             max-md:bg-black max-md:bg-opacity-5 max-sm:px-6 max-sm:py-4"
             data-aos={props.fade === undefined ? "fade-up" : props.fade}
         >

@@ -11,8 +11,8 @@ const skillsData = [
 	{
 		name: "Java",
 		strength: 8,
-		style: "bg-emerald-500",
-		textStyle: "text-emerald-600",
+		style: "bg-green-500",
+		textStyle: "text-green-600",
 	},
 	{
 		name: "SQL",

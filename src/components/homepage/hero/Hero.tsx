@@ -68,8 +68,36 @@ function Hero() {
 	}
 
 	return (
-		<div className="w-full max-w-[2000px] px-[10%] pt-48 max-xl:pt-40 max-sm:p-[5%] max-sm:pt-32">
-			<div className="absolute top-0 left-0 z-0 h-full w-full bg-black opacity-10"></div>
+		<div className="relative w-full max-w-[2000px] px-[10%] pt-48 pb-48 max-xl:pt-40 max-sm:p-[5%] max-sm:pt-32">
+            {/* max 2xl */}
+            <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/patterns2.svg')] top-0 left-0 opacity-30 max-2xl:hidden"></div>
+            <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/patterns3.svg')] top-0 left-0 opacity-30 max-2xl:hidden"></div>
+            <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/pattern2.svg')] top-0 left-0 opacity-10 max-2xl:hidden"></div>
+            {/* max xl */}
+            <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/pattern.svg')] top-0 left-0 opacity-10 max-xl:hidden 2xl:hidden"></div>
+            <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/patterns2.svg')] top-0 left-0 opacity-30 max-xl:hidden 2xl:hidden"></div>
+            <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/patterns3.svg')] top-0 left-0 opacity-30 max-xl:hidden 2xl:hidden"></div>
+            {/* max lg */}
+            <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/patterns1.svg')] top-0 left-0 opacity-30 max-sm:hidden xl:hidden"></div>
+            <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/patterns2.svg')] top-0 left-0 opacity-10 max-sm:hidden xl:hidden"></div>
+            <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/patterns4.svg')] top-0 left-0 opacity-30 max-sm:hidden xl:hidden"></div>
+            {/* max sm */}
+            <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/patterns3.svg')] top-0 left-0 opacity-30 sm:hidden"></div>
+            <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/patterns4.svg')] top-0 left-0 opacity-30 sm:hidden"></div>
+            <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/patterns5.svg')] top-0 left-0 opacity-10 sm:hidden"></div>
+
+            {/* <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/pattern.svg')] top-0 left-0 opacity-30"></div> */}
+            {/* <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/pattern2.svg')] top-0 left-0 opacity-30"></div> */}
+            {/* <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/patterns1.svg')] top-0 left-0 opacity-30"></div> */}
+            {/* <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/patterns2.svg')] top-0 left-0 opacity-30"></div> */}
+            {/* <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/patterns3.svg')] top-0 left-0 opacity-30"></div> */}
+            {/* <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/patterns4.svg')] top-0 left-0 opacity-30"></div> */}
+            {/* <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/patterns5.svg')] top-0 left-0 opacity-30"></div> */}
+            {/* <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/patterns6.svg')] top-0 left-0 opacity-30"></div> */}
+            {/* <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/patterns7.svg')] top-0 left-0 opacity-30"></div> */}
+            {/* <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/patterns8.svg')] top-0 left-0 opacity-30"></div> */}
+            {/* <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/patterns9.svg')] top-0 left-0 opacity-30"></div> */}
+            {/* <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/patterns10.svg')] top-0 left-0 opacity-30"></div> */}
 			<div className="justify-left flex items-start rounded-3xl">
 				<Terminal />
 				<div className="pt-12">
