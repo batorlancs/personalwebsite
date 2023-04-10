@@ -1,24 +1,56 @@
 import React from "react";
 import { uuidv4 } from "@firebase/util";
 
+// const skillsData = [
+// 	{
+// 		name: "JavaScript/Typescript (React)",
+// 		strength: 8,
+// 		style: "bg-neutral-500",
+// 		textStyle: "text-neutral-600",
+// 	},
+// 	{
+// 		name: "Java",
+// 		strength: 8,
+// 		style: "bg-green-500",
+// 		textStyle: "text-green-600",
+// 	},
+// 	{
+// 		name: "SQL",
+// 		strength: 6,
+// 		style: "bg-blue-400",
+// 		textStyle: "text-blue-500",
+// 	},
+// 	{
+// 		name: "Python",
+// 		strength: 5,
+// 		style: "bg-sky-800",
+// 		textStyle: "text-sky-900",
+// 	},
+// 	{
+// 		name: "C",
+// 		strength: 4,
+// 		style: "bg-rose-500",
+// 		textStyle: "text-rose-600",
+// 	},
+// ];
 const skillsData = [
 	{
 		name: "JavaScript/Typescript (React)",
 		strength: 8,
-		style: "bg-neutral-500",
-		textStyle: "text-neutral-600",
+		style: "bg-sky-800",
+		textStyle: "text-sky-900",
 	},
 	{
 		name: "Java",
 		strength: 8,
-		style: "bg-green-500",
-		textStyle: "text-green-600",
+		style: "bg-sky-800",
+		textStyle: "text-sky-900",
 	},
 	{
 		name: "SQL",
 		strength: 6,
-		style: "bg-blue-400",
-		textStyle: "text-blue-500",
+		style: "bg-sky-800",
+		textStyle: "text-sky-900",
 	},
 	{
 		name: "Python",
@@ -29,11 +61,10 @@ const skillsData = [
 	{
 		name: "C",
 		strength: 4,
-		style: "bg-rose-500",
-		textStyle: "text-rose-600",
+		style: "bg-sky-800",
+		textStyle: "text-sky-900",
 	},
 ];
-
 function getStuff(num: number, style: string) {
 	let res = [];
 	for (let i = 0; i < num; i++) {

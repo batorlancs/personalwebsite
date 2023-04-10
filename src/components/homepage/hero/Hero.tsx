@@ -73,6 +73,7 @@ function Hero() {
             <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/patterns2.svg')] top-0 left-0 opacity-30 max-2xl:hidden"></div>
             <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/patterns3.svg')] top-0 left-0 opacity-30 max-2xl:hidden"></div>
             <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/pattern2.svg')] top-0 left-0 opacity-10 max-2xl:hidden"></div>
+            <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/animated.svg')] top-0 left-0 opacity-5 grayscale saturate-50 max-xl:hidden"></div>
             {/* max xl */}
             <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/pattern.svg')] top-0 left-0 opacity-10 max-xl:hidden 2xl:hidden"></div>
             <div className="absolute -z-10 w-full h-full bg-cover bg-[url('../pic/design/patterns2.svg')] top-0 left-0 opacity-30 max-xl:hidden 2xl:hidden"></div>
