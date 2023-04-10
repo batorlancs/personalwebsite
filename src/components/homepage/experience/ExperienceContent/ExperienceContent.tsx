@@ -21,7 +21,7 @@ const ExperienceContent: React.FC<ExperienceContentProps> = (props) => {
                     <li className="ml-6" key={uuidv4()}>{task}</li>
                 ))}
             </ul>
-            <h1 className="text-4xl font-bold mt-12 mb-2 max-2xl:text-3xl max-xl:text-2xl">Gained Knowledge:</h1>
+            <h1 className="text-4xl font-bold mt-12 mb-2 max-2xl:text-3xl max-xl:text-2xl">Skills gained:</h1>
             <p className="text-2xl max-2xl:text-xl max-xl:text-lg">
                 {props.experience.learned}
             </p>
