@@ -12,8 +12,8 @@ const ExperienceContent: React.FC<ExperienceContentProps> = (props) => {
 	return (
         <div
             className="w-full max-lg:hidden"
-            data-aos="fade-up"
-            data-aos-delay="100"
+            // data-aos="fade-up"
+            // data-aos-delay="100"
         >
             <h1 className="text-4xl font-bold mb-2 max-2xl:text-3xl max-xl:text-2xl">Tasks:</h1>
             <ul className="text-2xl list-disc max-2xl:text-xl max-xl:text-lg">

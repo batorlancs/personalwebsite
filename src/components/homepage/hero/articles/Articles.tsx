@@ -65,7 +65,7 @@ function Articles() {
 
 				<div
 					className="hidden w-full flex-row items-center justify-between overflow-hidden rounded-3xl bg-white bg-opacity-20 py-6 px-12 shadow-lg backdrop-blur-xl max-xl:flex max-md:bg-black max-md:bg-opacity-5 max-sm:px-6 max-sm:py-4"
-					data-aos="fade-up"
+					// data-aos="fade-up"
 				>
 					<h1 className="text-3xl font-bold max-sm:text-xl">
 						My Coding Journey
@@ -82,7 +82,7 @@ function Articles() {
 					{articles.slice(0, 2).map((article) => (
 						<Link
                             className="min-h-full w-full rounded-3xl bg-white bg-opacity-20 p-6 shadow-lg backdrop-blur-xl cursor-pointer hover:bg-opacity-50"
-                            data-aos="fade-up"
+                            // data-aos="fade-up"
                             key={article.title}
                             to={`/article/${article.id}`}
                         >

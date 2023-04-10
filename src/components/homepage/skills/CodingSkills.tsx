@@ -46,7 +46,7 @@ function CodingSkills() {
 	return (
 		<div
 			className="w-[500px] min-w-[500px] rounded-3xl max-2xl:w-[400px] max-2xl:min-w-[400px] max-xl:w-full max-sm:rounded-3xl max-sm:min-w-0 max-sm:bg-white max-sm:bg-opacity-20 max-sm:px-6 max-sm:py-8 max-sm:shadow-xl max-sm:backdrop-blur-xl"
-			data-aos="fade-up"
+			// data-aos="fade-up"
 		>
 			<div className="flex flex-col gap-6 max-sm:gap-3">
 				{skillsData.map((skill) => (

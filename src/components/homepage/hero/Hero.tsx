@@ -176,7 +176,7 @@ function Hero() {
 					</div>
 					<div
 						className="relative mt-20 mb-5 hidden flex-row items-center justify-start gap-3 max-sm:flex"
-						data-aos="fade-up"
+						// data-aos="fade-up"
 					>
 						<div className="h-10 w-[2px] rounded-full bg-black opacity-20"></div>
 						<p className="font-cursive text-2xl opacity-50">
@@ -185,7 +185,7 @@ function Hero() {
 					</div>
 					<div
 						className="relative hidden flex-row gap-2 max-sm:flex"
-						data-aos="fade-up"
+						// data-aos="fade-up"
 					>
 						<a
 							href="https://www.linkedin.com/in/gergely-bator/"

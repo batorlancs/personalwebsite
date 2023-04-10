@@ -27,7 +27,7 @@ const ExperienceBox: React.FC<ExperienceBoxProps> = (props) => {
         <div
             className="h-full min-w-[500px] max-w-[500px] bg-white bg-opacity-20 rounded-3xl backdrop-blur-xl shadow-xl p-12 flex flex-col
             max-2xl:min-w-[400px] max-2xl:max-w-[400px] max-xl:p-8 max-xl:min-w-[300px] max-xl:max-w-[300px] max-lg:w-full max-lg:max-w-full max-sm:p-6"
-            data-aos="fade-up"
+            // data-aos="fade-up"
         >
             <div className="h-full flex flex-col items-start justify-center">
                 <h1 className="text-4xl font-bold pr-5 max-2xl:pr-0 max-2xl:text-3xl max-xl:text-2xl max-sm:text-xl">{title}</h1>
