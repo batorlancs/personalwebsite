@@ -42,8 +42,7 @@ function Experience() {
 	}, []);
 
     return (
-        <div
-            id="experience-page"
+        <div      
             className="relative pb-24 mb-24 w-full max-w-[2000px] px-[10%]  max-sm:px-[5%] max-sm:mb-0 max-sm:pb-16"
         >
             <PageHeader

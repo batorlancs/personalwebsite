@@ -64,18 +64,18 @@ function Header() {
 	});
 
 	const handleProjectClick = () => {
-        document.getElementById("projects-page")?.scrollIntoView();
-        window.scrollBy(0, 80);
+        document.getElementById("projects-page")?.scrollIntoView({ behavior: "smooth", block: "start"});
+        // window.scrollBy(0, -150);
 	};
 
     const handleSkillsClick = () => {
-        document.getElementById("skills-page")?.scrollIntoView();
-		window.scrollBy(0, -50);
+        document.getElementById("skills-page")?.scrollIntoView({ behavior: "smooth", block: "start"});
+		// window.scrollBy(0, -150);
     }
 
     const handleExperienceClick = () => {
-        document.getElementById("experience-page")?.scrollIntoView();
-		window.scrollBy(0, -50);
+        document.getElementById("experience-page")?.scrollIntoView({ behavior: "smooth", block: "start"});
+		// window.scrollBy(0, -150);
     }
 
     const handleArticlesClick = () => {
@@ -122,10 +122,10 @@ function Header() {
                             projects
                         </button>
                         <button className={buttonStyle} onClick={handleSkillsClick}>
-                            skills
+                            skills/experience
                         </button>
                         <button className={buttonStyle} onClick={handleExperienceClick}>
-                            experience
+                            CV
                         </button>
                     </>
                 :

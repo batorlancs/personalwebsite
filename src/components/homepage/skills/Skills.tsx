@@ -1,18 +1,15 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import PageHeader from "../PageHeader";
 import CodingSkills from "./CodingSkills";
 import GroupSkills from "./GroupSkills";
 import OtherSkills from "./OtherSkills";
-import BackgroundImage from "../../../pic/background5.png";
 
 function Skills() {
-	const navigate = useNavigate();
 
 	return (
 		<div
-			id="skills-page"
 			className="relative pt-48 mb-24 w-full max-w-[2000px] px-[10%] max-sm:mb-16 max-sm:px-[5%] max-sm:pt-0"
+            id="skills-page"
 		>
 			<PageHeader
 				title="My Skills"

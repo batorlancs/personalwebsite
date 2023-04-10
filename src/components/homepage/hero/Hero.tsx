@@ -63,8 +63,7 @@ function Hero() {
 	}
 
 	function handleContactClick() {
-		document.getElementById("contact-page")?.scrollIntoView();
-		window.scrollBy(0, -50);
+		document.getElementById("contact-page")?.scrollIntoView({ behavior: "smooth", block: "start"});
 	}
 
 	return (

@@ -645,6 +645,9 @@ video {
 .mb-8{
   margin-bottom: 2rem;
 }
+.block{
+  display: block;
+}
 .flex{
   display: flex;
 }
@@ -1047,6 +1050,12 @@ video {
 .bg-opacity-\[15\%\]{
   --tw-bg-opacity: 15%;
 }
+.bg-opacity-\[10\%\]{
+  --tw-bg-opacity: 10%;
+}
+.bg-opacity-\[0\%\]{
+  --tw-bg-opacity: 0%;
+}
 .bg-\[url\(\'\.\.\/pic\/wavesfinal\.jpg\'\)\]{
   background-image: url('../pic/wavesfinal.jpg');
 }
@@ -1437,6 +1446,10 @@ video {
   --tw-blur: blur(64px);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
+.brightness-50{
+  --tw-brightness: brightness(.5);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
 .drop-shadow-lg{
   --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -1570,6 +1583,10 @@ video {
 .hover\:text-black:hover{
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+.hover\:text-sky-600:hover{
+  --tw-text-opacity: 1;
+  color: rgb(2 132 199 / var(--tw-text-opacity));
 }
 .hover\:opacity-80:hover{
   opacity: 0.8;

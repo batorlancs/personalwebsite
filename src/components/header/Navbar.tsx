@@ -25,10 +25,10 @@ const Navbar: React.FC<NavbarProps> = (props) => {
                                 projects
                             </button>
                             <button className={buttonStyle} onClick={props.handleSkillsClick}>
-                                skills
+                                skills/experience
                             </button>
                             <button className={buttonStyle} onClick={props.handleExperienceClick}>
-                                experience
+                                CV
                             </button>
                         </>
                     :
