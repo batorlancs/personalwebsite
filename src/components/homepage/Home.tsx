@@ -27,7 +27,7 @@ function Home() {
 			<div className="absolute -z-50 h-full w-full top-0 left-0 bg-black bg-opacity-[15%]"></div>
 			<Hero />
 			<Project />
-            <div className="relative">
+            <div className="relative w-full max-w-[2000px] px-[10%] max-sm:px-[5%]">
                 <div className="absolute top-0 left-0 w-full h-full -z-10 bg-[url('../pic/design/icons.svg')] bg-cover opacity-[2%] max-sm:hidden"></div>
                 <Skills />
                 <Experience />
