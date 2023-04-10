@@ -85,7 +85,7 @@ const ProjectCardPic: React.FC<ProjectCardPicProps> = (props) => {
             >
                 <img
                     src={props.pics[0]}
-                    className="absolute top-0 left-0 min-h-full object-cover"
+                    className="absolute top-0 left-0 min-h-full w-full object-cover"
                     alt="project-preview"
                 ></img>
             </div>

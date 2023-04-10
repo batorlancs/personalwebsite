@@ -6,8 +6,8 @@ type ExperienceBoxChooserProps = {
     setCurrent: (num: number) => void;
 }
 
-const circleStyle = "h-6 w-6 rounded-full border-4 border-black cursor-pointer";
-const highlightedCircleStyle = "h-6 w-10 rounded-full border-4 border-black bg-sky-400 cursor-pointer";
+const circleStyle = "h-6 w-6 rounded-full border-2 border-black cursor-pointer";
+const highlightedCircleStyle = "h-6 w-10 rounded-full border-2 border-black bg-sky-400 cursor-pointer hover:bg-opacity-50";
 
 const ExperienceBoxChooser: React.FC<ExperienceBoxChooserProps> = (props) => {
 	return (

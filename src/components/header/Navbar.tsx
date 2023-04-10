@@ -18,7 +18,7 @@ const Navbar: React.FC<NavbarProps> = (props) => {
         <div onClick={props.toggleNavbar} className="fixed z-50 top-0 left-0 right-0 bottom-0 bg-black bg-opacity-30 lg:hidden">
             <div className="h-full w-[300px] bg-neutral-200 float-right flex items-center">
                 <div className="flex flex-col justify-start items-start pl-12 gap-2">
-                    <p className="font-terminal font-bold text-xl text-emerald-600">skip to</p>
+                    <p className="font-terminal font-bold text-xl text-sky-600">go to</p>
                     { props.isAtHome ?
                         <>
                             <button className={buttonStyle} onClick={props.handleProjectClick}>
@@ -41,7 +41,7 @@ const Navbar: React.FC<NavbarProps> = (props) => {
                             </button>
                         </>
                     }
-                    <p className="font-terminal font-bold text-xl mt-10 text-emerald-600">social links</p>
+                    <p className="font-terminal font-bold text-xl mt-10 text-sky-600">social links</p>
                     <a className={buttonStyle} href="https://www.linkedin.com/in/gergely-bator/">
                         linkedin
                     </a>

@@ -103,9 +103,9 @@ function Contact() {
 	return (
 		<div
 			id="contact-page"
-			className="relative pt-48 bg-black bg-opacity-5 max-w-[2000px] px-[10%] pb-48 max-sm:px-[5%] max-sm:pb-16 max-sm:pt-0 max-sm:bg-opacity-0 overflow-hidden"
+			className="relative pt-48 bg-black bg-opacity-5 max-w-[2000px] px-[10%] pb-48 max-sm:px-[5%] max-sm:pb-16 max-sm:pt-0 max-sm:bg-opacity-0 overflow-hidden min-[2000px]:bg-opacity-0"
 		>
-            <div className="absolute h-full w-full top-0 left-0 -z-20 bg-[url('../pic/design/clouds.svg')] bg-cover opacity-30 min-[2000px]:hidden"></div>
+            <div className="absolute h-full w-full top-0 left-0 -z-20 bg-[url('../pic/design/clouds.svg')] bg-cover opacity-20"></div>
 			<PageHeader
 				title="Contact"
 				buttonTitle="Message on LinkedIn"

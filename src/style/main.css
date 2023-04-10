@@ -528,6 +528,9 @@ video {
 .-z-20{
   z-index: -20;
 }
+.-z-30{
+  z-index: -30;
+}
 .col-start-1{
   grid-column-start: 1;
 }
@@ -941,6 +944,9 @@ video {
 .border-4{
   border-width: 4px;
 }
+.border-2{
+  border-width: 2px;
+}
 .border-t-2{
   border-top-width: 2px;
 }
@@ -986,10 +992,6 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(115 115 115 / var(--tw-bg-opacity));
 }
-.bg-green-500{
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 197 94 / var(--tw-bg-opacity));
-}
 .bg-blue-400{
   --tw-bg-opacity: 1;
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
@@ -1006,6 +1008,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(56 189 248 / var(--tw-bg-opacity));
 }
+.bg-green-500{
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 197 94 / var(--tw-bg-opacity));
+}
 .bg-red-500{
   --tw-bg-opacity: 1;
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
@@ -1016,10 +1022,6 @@ video {
 }
 .bg-transparent{
   background-color: transparent;
-}
-.bg-sky-500{
-  --tw-bg-opacity: 1;
-  background-color: rgb(14 165 233 / var(--tw-bg-opacity));
 }
 .bg-opacity-20{
   --tw-bg-opacity: 0.2;
@@ -1033,8 +1035,8 @@ video {
 .bg-opacity-30{
   --tw-bg-opacity: 0.3;
 }
-.bg-opacity-\[15\%\]{
-  --tw-bg-opacity: 15%;
+.bg-opacity-\[20\%\]{
+  --tw-bg-opacity: 20%;
 }
 .bg-opacity-5{
   --tw-bg-opacity: 0.05;
@@ -1042,8 +1044,8 @@ video {
 .bg-opacity-80{
   --tw-bg-opacity: 0.8;
 }
-.bg-opacity-\[20\%\]{
-  --tw-bg-opacity: 20%;
+.bg-opacity-\[15\%\]{
+  --tw-bg-opacity: 15%;
 }
 .bg-\[url\(\'\.\.\/pic\/wavesfinal\.jpg\'\)\]{
   background-image: url('../pic/wavesfinal.jpg');
@@ -1065,6 +1067,9 @@ video {
 }
 .bg-\[url\(\'\.\.\/pic\/design\/patterns3\.svg\'\)\]{
   background-image: url('../pic/design/patterns3.svg');
+}
+.bg-\[url\(\'\.\.\/pic\/design\/animated\.svg\'\)\]{
+  background-image: url('../pic/design/animated.svg');
 }
 .bg-\[url\(\'\.\.\/pic\/design\/patterns1\.svg\'\)\]{
   background-image: url('../pic/design/patterns1.svg');
@@ -1090,8 +1095,11 @@ video {
 .bg-\[url\(\'\.\.\/pic\/design\/patterns10\.svg\'\)\]{
   background-image: url('../pic/design/patterns10.svg');
 }
-.bg-\[url\(\'\.\.\/pic\/design\/animated\.svg\'\)\]{
-  background-image: url('../pic/design/animated.svg');
+.bg-\[url\(\'\.\.\/pic\/design\/icons\.svg\'\)\]{
+  background-image: url('../pic/design/icons.svg');
+}
+.bg-\[url\(\'\.\.\/pic\/design\/meteor\.svg\'\)\]{
+  background-image: url('../pic/design/meteor.svg');
 }
 .bg-cover{
   background-size: cover;
@@ -1311,10 +1319,6 @@ video {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
-.text-emerald-600{
-  --tw-text-opacity: 1;
-  color: rgb(5 150 105 / var(--tw-text-opacity));
-}
 .text-stone-500{
   --tw-text-opacity: 1;
   color: rgb(120 113 108 / var(--tw-text-opacity));
@@ -1331,10 +1335,6 @@ video {
   --tw-text-opacity: 1;
   color: rgb(82 82 82 / var(--tw-text-opacity));
 }
-.text-green-600{
-  --tw-text-opacity: 1;
-  color: rgb(22 163 74 / var(--tw-text-opacity));
-}
 .text-blue-500{
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
@@ -1346,6 +1346,10 @@ video {
 .text-rose-600{
   --tw-text-opacity: 1;
   color: rgb(225 29 72 / var(--tw-text-opacity));
+}
+.text-emerald-600{
+  --tw-text-opacity: 1;
+  color: rgb(5 150 105 / var(--tw-text-opacity));
 }
 .text-emerald-400{
   --tw-text-opacity: 1;
@@ -1367,10 +1371,6 @@ video {
   --tw-text-opacity: 1;
   color: rgb(248 113 113 / var(--tw-text-opacity));
 }
-.text-sky-500{
-  --tw-text-opacity: 1;
-  color: rgb(14 165 233 / var(--tw-text-opacity));
-}
 .underline{
   text-decoration-line: underline;
 }
@@ -1389,14 +1389,29 @@ video {
 .opacity-20{
   opacity: 0.2;
 }
-.opacity-60{
-  opacity: 0.6;
-}
 .opacity-10{
   opacity: 0.1;
 }
 .opacity-5{
   opacity: 0.05;
+}
+.opacity-\[1\%\]{
+  opacity: 1%;
+}
+.opacity-\[2\%\]{
+  opacity: 2%;
+}
+.opacity-\[3\%\]{
+  opacity: 3%;
+}
+.opacity-\[100\%\]{
+  opacity: 100%;
+}
+.opacity-\[50\%\]{
+  opacity: 50%;
+}
+.opacity-\[20\%\]{
+  opacity: 20%;
 }
 .shadow-xl{
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
@@ -1558,12 +1573,6 @@ video {
 }
 .hover\:opacity-80:hover{
   opacity: 0.8;
-}
-@media (max-width: 2000px){
-
-  .max-\[2000px\]\:hidden{
-    display: none;
-  }
 }
 @media not all and (min-width: 1536px){
 
@@ -2298,7 +2307,7 @@ video {
 }
 @media (min-width: 2000px){
 
-  .min-\[2000px\]\:hidden{
-    display: none;
+  .min-\[2000px\]\:bg-opacity-0{
+    --tw-bg-opacity: 0;
   }
 }

@@ -24,11 +24,14 @@ function Home() {
             {/* <img src={BackgroundFirst} className="absolute -z-40 w-full h-[1200px] top-[00px] left-0 opacity-30 max-sm:h-[700px] max-sm:opacity-20"></img> */}
             {/* <img src={BackgroundFirst} className="absolute -z-40 w-full h-[1000px] top-0 left-0 opacity-40 lg:hidden max-sm:h-[700px] max-sm:opacity-20"></img> */}
             {/* <div className="absolute h-[800px] w-full bottom-0 left-0 -z-0 bg-[url('../pic/background4.png')] bg-cover bg-no-repeat opacity-20 max-sm:opacity-20"></div> */}
-			<div className="absolute -z-20 h-full w-full top-0 left-0 bg-black bg-opacity-[20%]"></div>
+			<div className="absolute -z-20 h-full w-full top-0 left-0 bg-black bg-opacity-[15%]"></div>
 			<Hero />
 			<Project />
-            <Skills />
-            <Experience />
+            <div className="relative">
+                <div className="absolute top-0 left-0 w-full h-full -z-10 bg-[url('../pic/design/icons.svg')] bg-cover opacity-[2%] max-sm:hidden"></div>
+                <Skills />
+                <Experience />
+            </div>
 			<Contact />
 		</div>
 	);

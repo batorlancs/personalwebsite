@@ -25,7 +25,7 @@ const ExperienceBox: React.FC<ExperienceBoxProps> = (props) => {
 
 	return (
         <div
-            className="h-full min-w-[500px] max-w-[500px] bg-white bg-opacity-20 rounded-3xl shadow-xl p-12 flex flex-col
+            className="h-full min-w-[500px] max-w-[500px] bg-white bg-opacity-20 rounded-3xl backdrop-blur-xl shadow-xl p-12 flex flex-col
             max-2xl:min-w-[400px] max-2xl:max-w-[400px] max-xl:p-8 max-xl:min-w-[300px] max-xl:max-w-[300px] max-lg:w-full max-lg:max-w-full max-sm:p-6"
             data-aos="fade-up"
         >

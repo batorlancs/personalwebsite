@@ -12,7 +12,7 @@ function Skills() {
 	return (
 		<div
 			id="skills-page"
-			className="relative pt-24 mb-24 w-full max-w-[2000px] px-[10%] max-sm:mb-16 max-sm:px-[5%] max-sm:pt-0"
+			className="relative pt-48 mb-24 w-full max-w-[2000px] px-[10%] max-sm:mb-16 max-sm:px-[5%] max-sm:pt-0"
 		>
 			<PageHeader
 				title="My Skills"
