@@ -1546,6 +1546,9 @@ video {
 .scrollbar-thumb-emerald-500{
   --scrollbar-thumb: #10b981 !important;
 }
+.scrollbar-thumb-sky-500{
+  --scrollbar-thumb: #0ea5e9 !important;
+}
 .placeholder\:text-neutral-400::placeholder{
   --tw-text-opacity: 1;
   color: rgb(163 163 163 / var(--tw-text-opacity));

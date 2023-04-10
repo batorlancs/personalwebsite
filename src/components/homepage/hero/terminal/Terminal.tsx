@@ -4,7 +4,7 @@ import TerminalOptions from './terminalOptions/TerminalOptions';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './Terminal.css';
-import { query } from "../../../../functions";
+import { query, tempquery } from "../../../../functions";
 import { uuidv4 } from '@firebase/util';
 import LoadingAnimation from "../../../../pic/loadingAnimation.svg";
 import personalinfo from "./personalinfo";
@@ -44,15 +44,44 @@ function Terminal() {
     }
 
     const handleSubmit = (e:any) => {
+        const timeToWait = 1000 * 60 * 60 * 12;
+        const timesToAsk = 10;
+
+        const lastWarning = localStorage.getItem("lastWarning");
+        let isSpamming: boolean = false;
+
+        // check for spamming with local storage
+        if (lastWarning != null && lastWarning !== "") {
+            if (Date.now() - parseInt(lastWarning) < timeToWait) {
+                isSpamming = true;
+            } else {
+                localStorage.removeItem("lastWarning");
+                localStorage.setItem("numOfSubmits", "1");
+            }
+        } else {
+            const numOfSubmits = localStorage.getItem("numOfSubmits");
+
+            if (numOfSubmits != null && numOfSubmits !== "") {
+                const temp = parseInt(numOfSubmits) + 1;
+                localStorage.setItem("numOfSubmits", temp.toString());
+                if (temp >= timesToAsk) {
+                    localStorage.setItem("lastWarning", Date.now().toString());
+                }
+            } else {
+                localStorage.setItem("numOfSubmits", "1");
+            }
+        }
+
         e.preventDefault();
         if (isLoading === true || message === "") return;
-        if (dialog.length > 10) {
-            pushToDialog("Sorry, you have reached the maximum amount of questions.");
+        if (isSpamming) {
+            pushToDialog("Sorry, you have reached the maximum amount of questions. Check back later!");
             setIsAvailable(false);
+        } else {
+            setIsLoading(true);
+            getData();
+            if (inputPlaceHolder === "ask here") setInputPlaceHolder("ask more");
         }
-        setIsLoading(true);
-        getData();
-        if (inputPlaceHolder === "ask here") setInputPlaceHolder("ask more");
     }
 
     function pushToDialog(val: string) {
@@ -77,7 +106,7 @@ function Terminal() {
                 <div className='h-3 w-3 bg-red-500 rounded-full'></div>
                 <div className='h-3 w-3 bg-yellow-300 rounded-full'></div>
             </div>
-            <div ref={terminalContentRef} className='p-5 pr-12 h-[500px] scrollbar scrollbar-track-neutral-700 scrollbar-thumb-emerald-500'>
+            <div ref={terminalContentRef} className='p-5 pr-12 h-[500px] scrollbar scrollbar-track-neutral-700 scrollbar-thumb-sky-500'>
                 <TerminalOptions />
                 {dialog.map((dialogPart) => (
                     <div key={uuidv4()}>
